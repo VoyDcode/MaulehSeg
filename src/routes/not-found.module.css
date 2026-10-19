@@ -1,0 +1,23 @@
+.page {
+  padding-block: var(--space-section);
+}
+
+.code {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.title {
+  margin-top: var(--space-2);
+  font-size: var(--text-5xl);
+}
+
+.text {
+  max-width: var(--measure);
+  margin-block: var(--space-4) var(--space-6);
+  color: var(--color-text-muted);
+}
