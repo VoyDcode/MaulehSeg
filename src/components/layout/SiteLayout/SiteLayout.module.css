@@ -1,0 +1,33 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-4);
+  z-index: var(--z-skip-link);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  font-weight: 500;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  outline: var(--focus-ring-width) solid var(--color-white);
+  outline-offset: -6px;
+  transform: translateY(0);
+}
+
+.main {
+  flex: 1;
+}
+
+.main:focus {
+  outline: none;
+}
