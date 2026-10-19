@@ -30,6 +30,9 @@ function App() {
         </button>
       </section>
 
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim ex iste odit voluptate esse! Temporibus fuga pariatur dolore, reiciendis ipsam dolor, optio magni labore culpa, quam nesciunt natus quos minima?
+    </p>
+
       <div className="ticks"></div>
 
       <section id="next-steps">
