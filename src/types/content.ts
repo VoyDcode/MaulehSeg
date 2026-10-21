@@ -38,3 +38,53 @@ export interface PageInfo {
   title: string
   description: string
 }
+
+export interface ResponsiveImage {
+  src: string
+  sources: { type: 'image/avif' | 'image/webp'; srcSet: string }[]
+  sizes: string
+  width: number
+  height: number
+  alt: string
+}
+
+export interface TextSegment {
+  text: string
+  highlight?: boolean
+}
+
+export interface Stat {
+  value: string
+  label: string
+}
+
+export interface ClientLogo {
+  name: string
+  logo?: { src: string; width: number; height: number }
+}
+
+export interface HomeContent {
+  hero: {
+    title: string
+    subtitle: string
+    primaryAction: NavLink
+    secondaryAction: NavLink
+    image?: ResponsiveImage
+  }
+  about: {
+    id: string
+    title: string
+    text: string
+    action: NavLink
+    logo?: { src: string; alt: string }
+  }
+  focus: {
+    title: string
+    text: TextSegment[]
+    stats: Stat[]
+  }
+  clients: {
+    title: string
+    items: ClientLogo[]
+  }
+}

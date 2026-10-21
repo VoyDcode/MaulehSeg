@@ -38,3 +38,43 @@ export function CloseIcon(props: IconProps) {
     </svg>
   )
 }
+
+export function ChevronLeftIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="m15 18-6-6 6-6" />
+    </svg>
+  )
+}
+
+export function ChevronRightIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  )
+}
+
+export function ArrowDownIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M12 5v14M19 12l-7 7-7-7" />
+    </svg>
+  )
+}
+
+export function PauseIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M9 5v14M15 5v14" />
+    </svg>
+  )
+}
+
+export function PlayIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M7 4.5v15l12-7.5z" />
+    </svg>
+  )
+}

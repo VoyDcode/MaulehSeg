@@ -1,0 +1,77 @@
+.carousel {
+  --slide-size: clamp(8rem, 18vw, 11rem);
+  --slide-gap: var(--space-5);
+}
+
+.track {
+  display: flex;
+  gap: var(--slide-gap);
+  margin: 0;
+  padding: var(--space-4) var(--space-1);
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track:focus-visible {
+  outline-offset: 4px;
+}
+
+.slide {
+  flex: 0 0 var(--slide-size);
+  scroll-snap-align: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.control {
+  display: grid;
+  place-items: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.control:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+@keyframes emphasize {
+  0%,
+  100% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .slide > * {
+      animation: emphasize linear both;
+      animation-timeline: view(inline);
+    }
+  }
+}
