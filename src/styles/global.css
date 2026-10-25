@@ -44,7 +44,12 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: var(--header-height);
-  scrollbar-gutter: stable;
+  /* A barra nativa fica escondida; o componente PageScrollbar desenha uma por cima do conteúdo. */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 html:has(dialog[open]) {
