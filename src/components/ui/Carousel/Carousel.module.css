@@ -3,75 +3,78 @@
   --slide-gap: var(--space-5);
 }
 
+.viewport {
+  border-radius: var(--radius-md);
+}
+
+.viewport:focus-visible {
+  outline-offset: 4px;
+}
+
+.mask {
+  padding-block: var(--space-4);
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
 .track {
   display: flex;
   gap: var(--slide-gap);
+  width: max-content;
+}
+
+.list {
+  display: flex;
+  gap: var(--slide-gap);
   margin: 0;
-  padding: var(--space-4) var(--space-1);
+  padding: 0;
   list-style: none;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-}
-
-.track::-webkit-scrollbar {
-  display: none;
-}
-
-.track:focus-visible {
-  outline-offset: 4px;
 }
 
 .slide {
   flex: 0 0 var(--slide-size);
-  scroll-snap-align: center;
+  transition: transform var(--duration-base) var(--ease-out);
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
+.slide:hover {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.1);
 }
 
-.control {
-  display: grid;
-  place-items: center;
-  width: var(--touch-target);
-  height: var(--touch-target);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  background: var(--color-white);
-  color: var(--color-text);
-  font-size: 1.25rem;
-  cursor: pointer;
-  transition:
-    border-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out);
-}
-
-.control:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-@keyframes emphasize {
-  0%,
-  100% {
-    transform: scale(0.8);
-  }
-
-  50% {
-    transform: scale(1);
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-1 * var(--slide-count) * (var(--slide-size) + var(--slide-gap))));
   }
 }
 
-@supports (animation-timeline: view()) {
-  @media (prefers-reduced-motion: no-preference) {
-    .slide > * {
-      animation: emphasize linear both;
-      animation-timeline: view(inline);
-    }
+@media (prefers-reduced-motion: no-preference) {
+  .track {
+    animation: marquee var(--loop-duration) linear infinite;
+  }
+
+  .viewport:hover .track,
+  .viewport:focus-within .track,
+  .viewport[data-paused] .track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mask {
+    mask-image: none;
+  }
+
+  .track {
+    width: auto;
+  }
+
+  .list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .duplicate {
+    display: none;
   }
 }

@@ -1,5 +1,6 @@
 .footer {
   --focus-color: var(--color-white);
+  --logo-wordmark: var(--color-white);
 
   overflow: hidden;
   padding-top: var(--space-8);
@@ -14,16 +15,14 @@
   gap: var(--space-7) var(--space-6);
 }
 
-.brand {
-  font-family: var(--font-display);
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  line-height: var(--leading-tight);
+.logo {
+  width: clamp(11rem, 16vw, 13.5rem);
+  height: auto;
 }
 
 .tagline {
   max-width: 30ch;
-  margin-top: var(--space-3);
+  margin-top: var(--space-4);
   font-size: var(--text-sm);
   color: var(--color-on-dark-muted);
 }

@@ -3,6 +3,7 @@ import { companyLinks, serviceLinks } from '../../../content/navigation'
 import { site } from '../../../content/site'
 import type { NavLink } from '../../../types/content'
 import { Container } from '../../ui/Container/Container'
+import { Logo } from '../../ui/Logo/Logo'
 import styles from './Footer.module.css'
 
 export function Footer() {
@@ -10,7 +11,7 @@ export function Footer() {
     <footer id="contato" className={styles.footer}>
       <Container className={styles.grid}>
         <div>
-          <p className={styles.brand}>{site.name}</p>
+          <Logo variant="full" className={styles.logo} />
           <p className={styles.tagline}>{site.tagline}</p>
         </div>
 

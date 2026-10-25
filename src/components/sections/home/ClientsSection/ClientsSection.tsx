@@ -12,7 +12,7 @@ export function ClientsSection({ content }: { content: HomeContent['clients'] })
         <h2 id="clientes-titulo" className={styles.title}>
           {title}
         </h2>
-        <Carousel label={`Logos de ${title.toLowerCase()}`} autoplay>
+        <Carousel label={`Logos de ${title.toLowerCase()}`}>
           {items.map((client) => (
             <div key={client.name} className={styles.tile}>
               {client.logo ? (

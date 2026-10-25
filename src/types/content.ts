@@ -76,7 +76,6 @@ export interface HomeContent {
     title: string
     text: string
     action: NavLink
-    logo?: { src: string; alt: string }
   }
   focus: {
     title: string
