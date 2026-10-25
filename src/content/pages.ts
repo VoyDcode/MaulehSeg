@@ -15,12 +15,17 @@ export const pages = {
   services: {
     title: 'Serviços',
     description:
-      'PGR, LTCAT, laudos de insalubridade e periculosidade, eSocial SST e assessoria mensal em segurança do trabalho para manter sua empresa em conformidade.',
+      'Resgate técnico industrial e serviços em locais de difícil acesso por cordas: linha de vida, limpeza de fachada, pintura e manutenção predial.',
   },
   trainings: {
     title: 'Treinamentos',
     description:
-      'Treinamentos em Normas Regulamentadoras, como NR-35, NR-10, NR-33, CIPA e brigada de incêndio, com conteúdo prático para capacitar sua equipe.',
+      'Treinamentos práticos em NRs, como NR-35, NR-33, NR-10, NR-12 e brigada de incêndio (NR-23), além de resgate técnico conforme a NBR 16710.',
+  },
+  consulting: {
+    title: 'Consultoria',
+    description:
+      'Gestão em segurança do trabalho, equipes de SESMT para indústrias e construtoras e suporte a atividades de alto risco, como paradas de manutenção.',
   },
   notFound: {
     title: 'Página não encontrada',
