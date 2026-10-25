@@ -1,4 +1,5 @@
 import type { HomeContent } from '../../../../types/content'
+import { cx } from '../../../../lib/cx'
 import { Carousel } from '../../../ui/Carousel/Carousel'
 import { Container } from '../../../ui/Container/Container'
 import styles from './ClientsSection.module.css'
@@ -14,7 +15,7 @@ export function ClientsSection({ content }: { content: HomeContent['clients'] })
         </h2>
         <Carousel label={`Logos de ${title.toLowerCase()}`}>
           {items.map((client) => (
-            <div key={client.name} className={styles.tile}>
+            <div key={client.name} className={cx(styles.tile, client.onDark && styles.tileDark)}>
               {client.logo ? (
                 <img
                   src={client.logo.src}

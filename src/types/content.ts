@@ -61,6 +61,8 @@ export interface Stat {
 export interface ClientLogo {
   name: string
   logo?: { src: string; width: number; height: number }
+  /** Logo feito para fundo escuro (versão branca): o card usa o azul-escuro da marca. */
+  onDark?: boolean
 }
 
 export interface ValueStripItem {
