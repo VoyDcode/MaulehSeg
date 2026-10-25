@@ -38,3 +38,11 @@ export function CloseIcon(props: IconProps) {
     </svg>
   )
 }
+
+export function ArrowDownIcon(props: IconProps) {
+  return (
+    <svg {...baseProps} {...props}>
+      <path d="M12 5v14M19 12l-7 7-7-7" />
+    </svg>
+  )
+}

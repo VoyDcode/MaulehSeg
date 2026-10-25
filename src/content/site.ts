@@ -3,8 +3,8 @@ import type { SiteInfo } from '../types/content'
 // PROVISÓRIO: substituir pelos dados oficiais da empresa.
 export const site: SiteInfo = {
   name: 'MaulehSeg',
-  tagline: 'Texto institucional provisório sobre a empresa.',
-  phone: { display: '(11) 0000-0000', href: 'tel:+551100000000' },
+  tagline: 'Consultoria em segurança do trabalho, laudos técnicos e treinamentos em NRs para empresas que preferem prevenir a remediar.',
+  phone: { display: '(11) 95980-0154', href: 'tel:+5511959800154' },
   email: 'contato@example.com',
   address: 'Endereço provisório, 000, bairro, cidade',
   hours: [

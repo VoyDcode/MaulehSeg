@@ -1,0 +1,95 @@
+.hero {
+  --focus-color: var(--color-white);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(30rem, 72svh, 44rem);
+  padding-block: var(--space-section);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  isolation: isolate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(0 24 118 / 0.72);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+.inner {
+  position: relative;
+}
+
+.content {
+  max-width: 38rem;
+}
+
+.title {
+  font-size: var(--text-5xl);
+}
+
+.subtitle {
+  max-width: 32rem;
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  color: rgb(255 255 255 / 0.92);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.primaryAction {
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.45);
+}
+
+.secondaryAction {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+}
+
+.secondaryAction:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+@media (min-width: 64rem) {
+  .hero::after {
+    background: linear-gradient(
+      90deg,
+      rgb(0 24 118 / 0.9) 0%,
+      rgb(0 24 118 / 0.78) 50%,
+      rgb(0 24 118 / 0.2) 100%
+    );
+  }
+}
