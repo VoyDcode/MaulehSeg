@@ -61,6 +61,40 @@ export interface Stat {
 export interface ClientLogo {
   name: string
   logo?: { src: string; width: number; height: number }
+  /** Logo feito para fundo escuro (versão branca): o card usa o azul-escuro da marca. */
+  onDark?: boolean
+}
+
+export interface ValueStripItem {
+  label: string
+  text: string
+  reversed: boolean
+  dark: boolean
+  noisy?: boolean
+}
+
+export interface NavCard {
+  title: string
+  description: string
+  href: string
+}
+
+export interface AboutContent {
+  hero: {
+    title: string
+    text: string
+    action: NavLink
+    image?: ResponsiveImage
+  }
+  panoramic?: ResponsiveImage
+  values: {
+    id: string
+    items: ValueStripItem[]
+  }
+  navCards: {
+    label: string
+    items: NavCard[]
+  }
 }
 
 export interface HomeContent {

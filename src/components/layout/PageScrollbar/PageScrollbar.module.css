@@ -1,0 +1,36 @@
+.track {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-scrollbar);
+  width: 12px;
+  pointer-events: none;
+}
+
+.thumb {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 8px;
+  border-radius: 999px;
+  background: var(--color-primary-dark);
+  pointer-events: auto;
+  touch-action: none;
+  cursor: grab;
+}
+
+.thumb:active {
+  cursor: grabbing;
+}
+
+.thumb[hidden] {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .thumb {
+    width: 4px;
+    pointer-events: none;
+  }
+}

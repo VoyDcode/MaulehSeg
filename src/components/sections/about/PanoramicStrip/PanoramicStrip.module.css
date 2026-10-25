@@ -1,0 +1,41 @@
+/*
+  O card da foto do AboutHero invade o topo desta faixa em --hero-overlap
+  (tokens.css). A sobreposição em si é feita pela margem negativa do card.
+*/
+/*
+  Mobile e tablet: o card ocupa a largura toda, então tudo o que fica
+  embaixo dele some. O padding reserva essa faixa e a foto começa logo
+  abaixo do card, sem esconder a cabeça do trabalhador.
+*/
+.strip {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding-top: var(--hero-overlap);
+  background-color: var(--color-primary-dark);
+}
+
+/* Desktop: o card fica na coluna da direita, sobre o telhado, e a foto pode subir até o topo */
+@media (min-width: 64rem) {
+  .strip {
+    padding-top: 0;
+  }
+}
+
+.media {
+  display: block;
+  width: 100%;
+}
+
+/*
+  A faixa é sempre mais larga que a foto (4:3), então o corte é só
+  vertical. Ancorar no topo mantém o capacete e o rosto visíveis;
+  com "center" a cabeça ficava fora do enquadramento.
+*/
+.image {
+  display: block;
+  width: 100%;
+  height: clamp(14rem, 35vw, 32rem);
+  object-fit: cover;
+  object-position: center top;
+}

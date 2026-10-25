@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react'
 import { useLocation } from 'react-router'
 import { Footer } from '../Footer/Footer'
 import { Header } from '../Header/Header'
+import { PageScrollbar } from '../PageScrollbar/PageScrollbar'
 import styles from './SiteLayout.module.css'
 
 export function SiteLayout({ children }: { children: ReactNode }) {
@@ -26,6 +27,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <Footer />
+      <PageScrollbar />
     </div>
   )
 }

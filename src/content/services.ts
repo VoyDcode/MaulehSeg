@@ -1,9 +1,11 @@
 import type { ContentItem } from '../types/content'
 
-// PROVISÓRIO: confirmar com a empresa quais serviços são oferecidos.
+// Conforme o portfólio da empresa.
 export const services: ContentItem[] = [
-  { slug: 'pgr', title: 'PGR – Gerenciamento de Riscos' },
-  { slug: 'laudos-tecnicos', title: 'Laudos técnicos (LTCAT, insalubridade e periculosidade)' },
-  { slug: 'esocial-sst', title: 'Eventos de SST no eSocial' },
-  { slug: 'assessoria-mensal', title: 'Assessoria mensal em segurança do trabalho' },
+  { slug: 'resgate-tecnico-industrial', title: 'Resgate técnico industrial' },
+  { slug: 'acesso-por-cordas', title: 'Serviços de acesso por cordas' },
+  { slug: 'linha-de-vida', title: 'Instalação de linha de vida' },
+  { slug: 'limpeza-de-fachada', title: 'Limpeza de fachada' },
+  { slug: 'pintura-interna-e-externa', title: 'Pintura interna e externa' },
+  { slug: 'manutencao-predial', title: 'Manutenção predial' },
 ]
