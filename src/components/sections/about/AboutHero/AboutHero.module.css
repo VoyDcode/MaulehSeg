@@ -1,0 +1,118 @@
+.hero {
+  --focus-color: var(--color-white);
+
+  /*
+    --hero-overlap (tokens.css) define quanto o card invade o banner.
+    Fica global porque o PanoramicStrip também usa o mesmo valor.
+
+    z-index 1 + position relative: o hero (e o card dentro dele) pinta
+    acima do PanoramicStrip, que vem depois no DOM com z-index 0.
+    overflow precisa ficar visível em todas as larguras, senão o
+    pedaço do card que passa da borda inferior é cortado.
+  */
+  position: relative;
+  z-index: 1;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-top: var(--space-section);
+  padding-bottom: 0;
+  overflow: visible;
+}
+
+/* Mobile: empilhado, texto acima, card abaixo */
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  color: var(--color-accent);
+}
+
+.text {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: rgb(255 255 255 / 0.92);
+  max-width: 52ch;
+}
+
+/*
+  Margem negativa embaixo: o hero termina antes do card, então o card
+  sobra para fora da seção e fica por cima do banner seguinte.
+*/
+.card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: calc(-1 * var(--hero-overlap));
+}
+
+/* picture é só um wrapper transparente */
+.media {
+  display: block;
+  width: 100%;
+}
+
+/*
+  Mobile: 4/3 respeita as proporções originais da foto (1599x1200).
+  height: auto é obrigatório: sem ele o atributo height="1200" do <img>
+  vira altura fixa de 1200px e o aspect-ratio é ignorado.
+*/
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* ancora no topo: garante que o rosto (parte superior da foto) fique visível */
+  object-position: center top;
+}
+
+/*
+  Desktop: duas colunas. O card ocupa a altura do bloco de texto,
+  atravessa o padding inferior do hero e ainda desce --hero-overlap
+  para dentro do banner.
+*/
+@media (min-width: 64rem) {
+  .hero {
+    padding-block: var(--space-section);
+  }
+
+  .inner {
+    display: grid;
+    grid-template-columns: 11fr 9fr;
+    align-items: stretch;
+    gap: clamp(var(--space-7), 5vw, var(--space-9));
+  }
+
+  .card {
+    min-height: 22rem;
+    margin-bottom: calc(-1 * (var(--space-section) + var(--hero-overlap)));
+  }
+
+  /*
+    A foto fica absoluta dentro do card para não influenciar a altura
+    da linha do grid: quem define a altura é o texto + a sobreposição.
+  */
+  .media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .image {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}

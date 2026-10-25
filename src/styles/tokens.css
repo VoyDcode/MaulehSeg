@@ -47,6 +47,8 @@
   --space-9: 6rem;
   --space-10: 8rem;
   --space-section: clamp(3.5rem, 2.268rem + 5.258vw, 7rem);
+  /* Quanto o card da foto do Quem Somos invade o banner panorâmico logo abaixo */
+  --hero-overlap: clamp(3rem, 1.5rem + 5vw, 6rem);
 
   --container-max: 75rem;
   --gutter: clamp(1rem, 0.4718rem + 2.254vw, 2.5rem);
