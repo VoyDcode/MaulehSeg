@@ -10,13 +10,13 @@ import { clients } from './clients'
 
 const aboutId = 'sobre'
 
-// PROVISÓRIO: textos aguardando o conteúdo oficial do cliente.
 export const homeContent: HomeContent = {
   hero: {
-    title: 'Construindo seu futuro com precisão e expertise',
-    subtitle: 'Nós iluminamos sua visão de vida e somos criativos, agregando inovação tecnológica e construção.',
-    primaryAction: { label: 'Saiba mais', href: paths.services },
-    secondaryAction: { label: 'Aprenda brevemente sobre nós', href: `#${aboutId}` },
+    title: 'Sua equipe protegida, sua empresa em conformidade',
+    subtitle:
+      'Consultoria em segurança do trabalho, laudos técnicos e treinamentos em Normas Regulamentadoras para reduzir riscos, evitar autuações e fortalecer a cultura de prevenção.',
+    primaryAction: { label: 'Conheça nossos serviços', href: paths.services },
+    secondaryAction: { label: 'Quem é a MaulehSeg', href: `#${aboutId}` },
     image: {
       src: heroWebp1600,
       sources: [
@@ -31,21 +31,21 @@ export const homeContent: HomeContent = {
   },
   about: {
     id: aboutId,
-    title: 'Frase de impacto sobre quem é a empresa',
-    text: 'Espaço para 2 ou 3 frases sobre a origem, a experiência e a forma de atuação da empresa. Conteúdo a ser enviado pelo cliente.',
-    action: { label: 'Entenda nossa história', href: paths.about },
+    title: 'Prevenção feita por quem conhece a rotina da sua operação',
+    text: 'Vamos até a sua empresa, acompanhamos o dia a dia de cada atividade e identificamos os riscos reais do trabalho. A partir disso, entregamos documentação técnica e treinamentos que funcionam na prática, e não apenas no papel.',
+    action: { label: 'Conheça nossa história', href: paths.about },
   },
   focus: {
     title: 'Nosso foco',
     text: [
-      { text: 'Espaço para a frase que resume ' },
-      { text: 'o foco da empresa', highlight: true },
-      { text: ', com um trecho em destaque como este.' },
+      { text: 'Trabalhamos para que cada colaborador ' },
+      { text: 'volte para casa em segurança', highlight: true },
+      { text: ' e para que a sua empresa esteja sempre em dia com as NRs e o eSocial.' },
     ],
     stats: [
-      { value: '80%', label: 'Indicador A' },
-      { value: '99%', label: 'Indicador B' },
-      { value: '100%', label: 'Indicador C' },
+      { value: '+15', label: 'Anos de experiência' },
+      { value: '+50', label: 'Empresas atendidas' },
+      { value: '+1000', label: 'Profissionais treinados' },
     ],
   },
   clients: {

@@ -1,9 +1,9 @@
 import type { ContentItem } from '../types/content'
 
-// PROVISÓRIO: substituir pela lista oficial de serviços.
+// PROVISÓRIO: confirmar com a empresa quais serviços são oferecidos.
 export const services: ContentItem[] = [
-  { slug: 'servico-1', title: 'Serviço 1' },
-  { slug: 'servico-2', title: 'Serviço 2' },
-  { slug: 'servico-3', title: 'Serviço 3' },
-  { slug: 'servico-4', title: 'Serviço 4' },
+  { slug: 'pgr', title: 'PGR – Gerenciamento de Riscos' },
+  { slug: 'laudos-tecnicos', title: 'Laudos técnicos (LTCAT, insalubridade e periculosidade)' },
+  { slug: 'esocial-sst', title: 'Eventos de SST no eSocial' },
+  { slug: 'assessoria-mensal', title: 'Assessoria mensal em segurança do trabalho' },
 ]
