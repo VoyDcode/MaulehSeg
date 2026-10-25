@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\victo\\\\Desktop\\\\reposito\\\\MaulehSeg-handoff\" -Recurse | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\victo\\\\.claude\\\\skills\\\\ui-ux-pro-max\" -Recurse | ForEach-Object { $_.FullName })",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(python \"C:\\\\Users\\\\victo\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"institutional safety consulting services professional trust\" --design-system -p \"MaulehSeg\" 2>&1)",
+      "PowerShell(python \"C:\\\\Users\\\\victo\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"hero layout two column image card alignment grid\" --domain ux 2>&1)",
+      "PowerShell(python \"C:\\\\Users\\\\victo\\\\.claude\\\\skills\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"react css grid two column hero section responsive\" --stack react 2>&1)",
+      "Skill(update-config)",
+      "Bash(npx oxlint *)",
+      "Bash(python *)"
+    ]
+  }
+}
