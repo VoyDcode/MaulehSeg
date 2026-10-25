@@ -6,5 +6,6 @@ export default [
   route(paths.about, 'routes/about.tsx'),
   route(paths.services, 'routes/services.tsx'),
   route(paths.trainings, 'routes/trainings.tsx'),
+  route(paths.consulting, 'routes/consulting.tsx'),
   route('*', 'routes/not-found.tsx'),
 ] satisfies RouteConfig
