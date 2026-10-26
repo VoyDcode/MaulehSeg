@@ -42,3 +42,12 @@ export function Logo({ variant = 'compact', decorative = false, className }: Log
     </svg>
   )
 }
+
+/** Só o capacete do logo, decorativo. A cor vem de `color` (currentColor). */
+export function HelmetMark({ className }: { className?: string }) {
+  return (
+    <svg viewBox="336 14 702 418" className={className} fill="currentColor" aria-hidden focusable={false}>
+      <path d={HELMET} fillRule="evenodd" />
+    </svg>
+  )
+}

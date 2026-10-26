@@ -15,20 +15,6 @@ export function Footer() {
           <p className={styles.tagline}>{site.tagline}</p>
         </div>
 
-        <section aria-labelledby="rodape-horario">
-          <h2 id="rodape-horario" className={styles.title}>
-            Horário
-          </h2>
-          <dl className={styles.hours}>
-            {site.hours.map(({ days, time }) => (
-              <div key={days}>
-                <dt>{days}</dt>
-                <dd>{time}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
         <FooterLinks id="rodape-servicos" title="Serviços" links={serviceLinks} />
         <FooterLinks id="rodape-empresa" title="Empresa" links={companyLinks} />
 

@@ -58,6 +58,12 @@
   height: 2.5rem;
 }
 
+.seal {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+}
+
 .list {
   padding: var(--space-3) 0 var(--space-6);
   list-style: none;
