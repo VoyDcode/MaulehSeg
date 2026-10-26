@@ -46,6 +46,13 @@
   height: 2.5rem;
 }
 
+/* O selo é redondo e tem texto em volta: usa quase toda a altura do cabeçalho. */
+.seal {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+}
+
 .desktopNav,
 .cta {
   display: none;
@@ -64,6 +71,10 @@
 
   .logo {
     height: 3.5rem;
+  }
+
+  .seal {
+    height: 4.25rem;
   }
 
   .desktopNav {
