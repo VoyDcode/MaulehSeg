@@ -32,21 +32,6 @@
   font-size: var(--text-xl);
 }
 
-.hours {
-  display: grid;
-  gap: var(--space-3);
-  font-size: var(--text-sm);
-}
-
-.hours dt {
-  font-weight: 500;
-}
-
-.hours dd {
-  margin: 0;
-  color: var(--color-on-dark-muted);
-}
-
 .links {
   display: grid;
   padding: 0;
@@ -107,7 +92,7 @@
 
 @media (min-width: 64rem) {
   .grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1fr 1.4fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
   }
 
   .contact {
