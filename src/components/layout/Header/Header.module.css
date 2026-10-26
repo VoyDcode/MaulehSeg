@@ -1,0 +1,87 @@
+.header {
+  --header-bg: var(--color-primary);
+  --header-fg: var(--color-white);
+  --header-accent: var(--color-white);
+  --focus-color: var(--color-white);
+  /* No azul do cabeçalho o capacete azul some: versão em branco, mantendo o "Seg" verde. */
+  --logo-helmet: var(--color-white);
+  --logo-wordmark: var(--color-white);
+
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--header-bg);
+  color: var(--header-fg);
+}
+
+.header[data-theme='light'] {
+  --header-bg: var(--color-white);
+  --header-fg: var(--color-text);
+  --header-accent: var(--color-primary);
+  --focus-color: var(--color-primary);
+  --logo-helmet: var(--color-logo-blue);
+  --logo-wordmark: var(--color-black);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: var(--header-height);
+}
+
+.brand {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: var(--touch-target);
+  margin-right: auto;
+  border-radius: var(--radius-sm);
+}
+
+.logo {
+  width: auto;
+  height: 2.5rem;
+}
+
+/* O selo é redondo e tem texto em volta: usa quase toda a altura do cabeçalho. */
+.seal {
+  display: block;
+  width: auto;
+  height: 3.25rem;
+}
+
+.desktopNav,
+.cta {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .cta {
+    display: block;
+  }
+}
+
+@media (min-width: 64rem) {
+  .inner {
+    gap: var(--space-5);
+  }
+
+  .logo {
+    height: 3.5rem;
+  }
+
+  .seal {
+    height: 4.25rem;
+  }
+
+  .desktopNav {
+    display: block;
+  }
+
+  .mobileNav {
+    display: none;
+  }
+}

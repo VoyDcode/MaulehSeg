@@ -1,0 +1,49 @@
+.section {
+  padding-bottom: var(--space-section);
+}
+
+.title {
+  margin-bottom: var(--space-5);
+  font-size: var(--text-4xl);
+  text-align: center;
+}
+
+/*
+  Fundo branco: alguns logos (Arcos, Slitteraço) vêm em JPG com fundo
+  branco embutido, que aparecia como uma caixa no azul-claro de antes.
+*/
+.tile {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+/* Logos que só existem em branco (SWA, GAT) */
+.tileDark {
+  border-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
+}
+
+/* min-size 0 deixa o logo encolher dentro da célula do grid */
+.logo {
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--color-primary);
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+/*
+  As cores de cada parte podem ser trocadas pelo fundo onde o logo aparece:
+  --logo-helmet (capacete), --logo-wordmark (MAULEH e slogan) e --logo-script (Seg).
+  O tamanho fica com quem usa o logo: definir height (ou width) e deixar o outro em auto.
+*/
+.logo {
+  display: block;
+}
+
+.helmet,
+.wordmark,
+.script {
+  fill-rule: evenodd;
+}
+
+.helmet {
+  fill: var(--logo-helmet, var(--color-logo-blue));
+}
+
+.wordmark {
+  fill: var(--logo-wordmark, var(--color-black));
+}
+
+.script {
+  fill: var(--logo-script, var(--color-logo-green));
+}

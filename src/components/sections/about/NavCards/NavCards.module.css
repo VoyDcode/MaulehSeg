@@ -1,0 +1,57 @@
+.section {
+  --focus-color: var(--color-primary);
+  --slide-size: clamp(17rem, 32vw, 26rem);
+
+  background-color: var(--color-white);
+  color: var(--color-text);
+  padding-block: var(--space-section);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-7);
+  color: var(--color-primary);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  width: 100%;
+  height: 100%;
+  min-height: 10rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-tint);
+  color: var(--color-text);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.06);
+  transition: transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.card:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: var(--leading-snug);
+}
+
+.cardDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}

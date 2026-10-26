@@ -1,0 +1,30 @@
+.hero {
+  --focus-color: var(--color-white);
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-block: var(--space-section);
+}
+
+/* Wireframe: título, texto e botão centralizados */
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  text-align: center;
+}
+
+.title {
+  max-width: 20ch;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+}
+
+.text {
+  max-width: 60ch;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: rgb(255 255 255 / 0.92);
+}

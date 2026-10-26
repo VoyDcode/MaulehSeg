@@ -1,0 +1,13 @@
+.placeholder {
+  padding-block: var(--space-section);
+}
+
+.title {
+  font-size: var(--text-5xl);
+}
+
+.note {
+  max-width: var(--measure);
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+}
