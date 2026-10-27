@@ -3,8 +3,10 @@ export interface ContentItem {
   title: string
   /** Resumo curto mostrado no card da página da categoria. */
   summary?: string
-  /** Foto do card. Sem ela, o card mostra o capacete da marca no lugar. */
+  /** Foto do card. Sem ela, o card mostra o código (se houver) ou o capacete da marca. */
   image?: ResponsiveImage
+  /** Código curto da norma (ex.: NR-10), mostrado no card quando não há foto. */
+  code?: string
 }
 
 /**

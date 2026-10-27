@@ -20,9 +20,16 @@ function ListingCard({ item, href, eager }: { item: ContentItem; href: string; e
           decoding="async"
         />
       ) : (
-        // Sem foto própria ainda: capacete da marca no lugar, mesmo tamanho da foto.
+        // Sem foto própria ainda: código da norma ou capacete da marca, no mesmo tamanho da foto.
+        // O código já está no título, então aqui ele é só visual.
         <div className={styles.placeholder}>
-          <HelmetMark className={styles.helmet} />
+          {item.code ? (
+            <span className={styles.code} aria-hidden="true">
+              {item.code}
+            </span>
+          ) : (
+            <HelmetMark className={styles.helmet} />
+          )}
         </div>
       )}
       <div className={styles.body}>
