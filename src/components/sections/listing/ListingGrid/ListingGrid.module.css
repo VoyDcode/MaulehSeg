@@ -33,6 +33,15 @@
   }
 }
 
+/* Tablet: com número ímpar de cards, o último fica centralizado em vez de sozinho à esquerda */
+@media (min-width: 40rem) and (max-width: 63.999rem) {
+  .grid > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--space-6)) / 2);
+  }
+}
+
 @media (min-width: 64rem) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
