@@ -1,4 +1,5 @@
-import type { ContentItem, ResponsiveImage } from '../types/content'
+import type { ContentItem } from '../types/content'
+import { cardImage } from './card-image'
 
 import resgateAvif640 from '../assets/images/services/resgate-suspensao-640.avif'
 import resgateAvif1024 from '../assets/images/services/resgate-suspensao-1024.avif'
@@ -12,23 +13,6 @@ import linhaAvif640 from '../assets/images/services/linha-de-vida-escada-640.avi
 import linhaAvif1024 from '../assets/images/services/linha-de-vida-escada-1024.avif'
 import linhaWebp640 from '../assets/images/services/linha-de-vida-escada-640.webp'
 import linhaWebp1024 from '../assets/images/services/linha-de-vida-escada-1024.webp'
-
-// Cards de 1 coluna no celular, 2 no tablet e 3 a partir de 1024px.
-const CARD_SIZES = '(min-width: 1024px) 380px, (min-width: 640px) 46vw, 92vw'
-
-function cardImage(alt: string, avif: string, webp: string, src: string, width: number): ResponsiveImage {
-  return {
-    src,
-    sources: [
-      { type: 'image/avif', srcSet: avif },
-      { type: 'image/webp', srcSet: webp },
-    ],
-    sizes: CARD_SIZES,
-    width,
-    height: Math.round((width * 2) / 3),
-    alt,
-  }
-}
 
 // Conforme o portfólio da empresa.
 // PROVISÓRIO: confirmar os resumos com o Maurício. Limpeza de fachada, pintura e
