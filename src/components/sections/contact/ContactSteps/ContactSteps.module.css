@@ -1,0 +1,61 @@
+.section {
+  background-color: var(--color-primary-tint);
+  padding-block: var(--space-section);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.title {
+  font-size: var(--text-4xl);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* No tablet as três colunas ficam estreitas demais para o texto */
+@media (min-width: 64rem) {
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Número grande em verde, como os números do "Nosso foco" da Home */
+.step {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.06);
+}
+
+.number {
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-accent-strong);
+}
+
+.stepTitle {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  color: var(--color-primary);
+}
+
+.text {
+  color: var(--color-text-muted);
+}

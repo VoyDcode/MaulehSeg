@@ -11,7 +11,7 @@ import consultorWebp1024 from '../assets/images/consulting/chamada-consultor-102
 
 // Mesmo layout de Serviços e Treinamentos.
 // Fica separado de consulting.ts porque navigation.ts importa a lista (evita import circular).
-// O botão usa o mesmo destino do "Fale conosco" (destino ainda em aberto no handoff).
+// O botão de orçamento leva para a página /contato, o mesmo destino do "Fale conosco".
 const budgetAction = { label: 'Solicitar orçamento', href: contactCta.href }
 
 export const consultingPage: ListingPageContent = {

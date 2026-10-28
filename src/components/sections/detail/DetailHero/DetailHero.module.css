@@ -1,0 +1,50 @@
+.hero {
+  --focus-color: var(--color-white);
+
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding-block: var(--space-8) var(--space-section);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+/* O verde do Figma sobre o azul fica ilegível (2,2:1); aqui vai o verde claro */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch-target);
+  margin-block: calc(-1 * var(--space-3)) calc(-1 * var(--space-2));
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-on-primary);
+  text-decoration: none;
+}
+
+.eyebrow:hover {
+  text-decoration: underline;
+}
+
+.title {
+  max-width: 22ch;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+}
+
+.text {
+  max-width: 52ch;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: rgb(255 255 255 / 0.92);
+}
+
+.action {
+  margin-top: var(--space-2);
+}

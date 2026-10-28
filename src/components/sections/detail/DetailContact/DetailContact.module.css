@@ -1,0 +1,86 @@
+/*
+  Figma: faixa azul, foto colada na borda esquerda (no alto) e, ao lado,
+  "Áreas de atuação", título, texto e formulário. No celular a foto vai para cima.
+*/
+.band {
+  --focus-color: var(--color-white);
+
+  /* cqw (largura da faixa) em vez de vw, que inclui a barra de rolagem */
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.media {
+  display: block;
+  /* sem width explícito, o aspect-ratio com max-height encolhe a largura no grid */
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 26rem;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* rosto e mãos ficam no centro-alto da foto */
+  object-position: 50% 35%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-7) var(--gutter) var(--space-section);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: var(--leading-snug);
+  color: var(--color-accent-on-primary);
+}
+
+.title {
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+}
+
+.text {
+  max-width: 56ch;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: rgb(255 255 255 / 0.92);
+}
+
+@media (min-width: 64rem) {
+  .band {
+    padding-block: var(--space-section);
+  }
+
+  .band[data-has-image] {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    align-items: start;
+  }
+
+  /* A foto acompanha a rolagem enquanto o visitante preenche o formulário */
+  .media {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-5));
+    max-height: none;
+  }
+
+  /* Alinha a borda direita do formulário com a coluna do Container */
+  .content {
+    padding-block: 0;
+    padding-inline-start: clamp(var(--space-6), 4vw, var(--space-9));
+    padding-inline-end: max(var(--gutter), calc((100cqw - var(--container-max)) / 2));
+  }
+}

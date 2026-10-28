@@ -1,0 +1,154 @@
+.section {
+  --focus-color: var(--color-primary);
+
+  /* cqw (largura da seção) em vez de vw, que inclui a barra de rolagem */
+  container-type: inline-size;
+  position: relative;
+  overflow: clip;
+  padding-bottom: var(--space-section);
+}
+
+/* Capacete da marca bem apagado no fundo azul (no branco ele some) */
+.watermark {
+  position: absolute;
+  top: var(--space-6);
+  right: -6rem;
+  width: clamp(20rem, 60cqw, 44rem);
+  height: auto;
+  color: var(--color-white);
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/*
+  Celular e tablet: texto, card e canais empilhados.
+  Desktop: texto à esquerda e card à direita ocupando as duas linhas;
+  a linha de cima tem a faixa azul, a de baixo fica no branco.
+*/
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Faixa azul atrás da primeira linha, de uma borda à outra da tela */
+.layout::before {
+  content: '';
+  grid-row: 1;
+  grid-column: 1 / -1;
+  margin-inline: calc((100% - 100cqw) / 2);
+  background-color: var(--color-primary);
+}
+
+.intro {
+  --focus-color: var(--color-white);
+
+  position: relative;
+  z-index: 1;
+  grid-row: 1;
+  grid-column: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  /* embaixo sobra espaço para o card subir por cima da faixa */
+  padding-block: var(--space-8) calc(var(--space-9) + var(--space-5));
+  color: var(--color-white);
+}
+
+/* Verde claro: o verde da marca sobre o azul não tem contraste suficiente */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-on-primary);
+}
+
+.title {
+  max-width: 14ch;
+  font-size: var(--text-5xl);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+}
+
+.text {
+  max-width: 48ch;
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: rgb(255 255 255 / 0.92);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  grid-column: 1;
+  display: grid;
+  gap: var(--space-3);
+  margin-top: calc(-1 * var(--space-9));
+  padding: clamp(var(--space-5), 0.75rem + 3vw, var(--space-7));
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  scroll-margin-top: var(--space-5);
+}
+
+/* Faixa verde no topo do card, a cor dos botões de ação do site */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.375rem;
+  background-color: var(--color-accent-strong);
+}
+
+.cardTitle {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-primary);
+}
+
+.cardText {
+  margin-bottom: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.aside {
+  grid-row: 3;
+  grid-column: 1;
+  padding-top: var(--space-8);
+}
+
+@media (min-width: 64rem) {
+  .layout {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    /* 1fr embaixo: a altura que o card passa da faixa vai para a linha branca, não para a azul */
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(var(--space-7), 5vw, var(--space-9));
+  }
+
+  .intro {
+    justify-content: center;
+    padding-block: var(--space-9);
+  }
+
+  .card {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    align-self: start;
+    margin-top: var(--space-8);
+  }
+
+  .aside {
+    grid-row: 2;
+    padding-top: var(--space-8);
+  }
+
+  .watermark {
+    top: var(--space-7);
+    right: auto;
+    left: -6rem;
+    width: clamp(24rem, 38cqw, 38rem);
+  }
+}

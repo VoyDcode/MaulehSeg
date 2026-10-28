@@ -21,7 +21,7 @@ export const aboutContent: AboutContent = {
     title: 'Segurança do trabalho é o nosso negócio',
     // PROVISÓRIO: confirmar texto com o cliente
     text: 'A MaulehSeg nasceu da vontade de levar segurança do trabalho de verdade para dentro das empresas. Vamos até você, conhecemos sua operação e entregamos documentação técnica e treinamentos que funcionam no dia a dia, e não apenas no papel.',
-    action: { label: 'Fale conosco', href: '#contato' },
+    action: { label: 'Fale conosco', href: paths.contact },
     image: {
       src: donoWebp1024,
       sources: [
@@ -112,7 +112,7 @@ export const aboutContent: AboutContent = {
         // PROVISÓRIO
         title: 'Fale conosco',
         description: 'Entre em contato para orçamentos e dúvidas.',
-        href: '#contato',
+        href: paths.contact,
       },
     ],
   },

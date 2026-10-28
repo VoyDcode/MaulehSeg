@@ -11,8 +11,7 @@ import escritorioWebp1024 from '../assets/images/services/orcamento-escritorio-1
 
 // Fica separado de services.ts porque navigation.ts importa a lista de serviços
 // (juntar os dois criaria import circular).
-// O botão de orçamento usa o mesmo destino do "Fale conosco" (seção 8 do handoff:
-// destino ainda em aberto). Quando for decidido, muda só em navigation.ts.
+// O botão de orçamento leva para a página /contato, o mesmo destino do "Fale conosco".
 const budgetAction = { label: 'Solicitar orçamento', href: contactCta.href }
 
 export const servicesPage: ListingPageContent = {
