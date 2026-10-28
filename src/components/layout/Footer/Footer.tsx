@@ -1,7 +1,8 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router'
 import { companyLinks, serviceLinks } from '../../../content/navigation'
 import { site } from '../../../content/site'
-import type { NavLink } from '../../../types/content'
+import type { NavLink, SiteInfo } from '../../../types/content'
 import { Container } from '../../ui/Container/Container'
 import { Logo } from '../../ui/Logo/Logo'
 import styles from './Footer.module.css'
@@ -41,9 +42,32 @@ export function Footer() {
         </section>
       </Container>
 
+      <Container className={styles.credits}>
+        <p>
+          Site desenvolvido por <CreditList credits={site.credits} />
+        </p>
+      </Container>
+
       <div className={styles.watermark} data-text={site.name} aria-hidden="true" />
     </footer>
   )
+}
+
+// "A e B" ou "A, B e C", com link para o LinkedIn de cada um
+function CreditList({ credits }: { credits: SiteInfo['credits'] }) {
+  return credits.map((credit, index) => (
+    <Fragment key={credit.name}>
+      {index > 0 && (index === credits.length - 1 ? ' e ' : ', ')}
+      {credit.href ? (
+        <a href={credit.href} target="_blank" rel="noopener noreferrer">
+          {credit.name}
+          <span className={styles.visuallyHidden}> (LinkedIn, abre em nova aba)</span>
+        </a>
+      ) : (
+        credit.name
+      )}
+    </Fragment>
+  ))
 }
 
 interface FooterLinksProps {

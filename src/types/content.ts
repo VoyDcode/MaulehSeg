@@ -138,6 +138,8 @@ export interface SiteInfo {
   address: string
   hours: BusinessHours[]
   social: NavLink[]
+  /** Quem desenvolveu o site, no pé do rodapé. Sem href, o nome aparece sem link. */
+  credits: { name: string; href?: string }[]
 }
 
 export interface PageInfo {

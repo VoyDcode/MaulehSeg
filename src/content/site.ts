@@ -12,4 +12,8 @@ export const site: SiteInfo = {
     { days: 'Sábado e domingo', time: 'Fechado' },
   ],
   social: [],
+  credits: [
+    { name: 'Victor Rodrigues', href: 'https://www.linkedin.com/in/victorrodriguesdev2110/' },
+    { name: 'Mateus Teixeira', href: 'https://www.linkedin.com/in/mateusteixeiragomes/' },
+  ],
 }
