@@ -17,14 +17,15 @@
   transition: background-color var(--duration-fast) var(--ease-out);
 }
 
+/* A cor pode ser trocada por página: --button-accent e --button-accent-hover (ex.: laranja em Serviços) */
 .accent {
-  background: var(--color-accent-strong);
+  background: var(--button-accent, var(--color-accent-strong));
   color: var(--color-white);
   border-radius: var(--radius-sm);
 }
 
 .accent:hover {
-  background: var(--color-accent-strong-hover);
+  background: var(--button-accent-hover, var(--color-accent-strong-hover));
 }
 
 .dark {

@@ -14,6 +14,13 @@
   color: var(--header-fg);
 }
 
+/* Página de Serviços: preto, junto com o banner preto logo abaixo, e botão laranja */
+.header[data-theme='dark'] {
+  --header-bg: var(--color-black);
+  --button-accent: var(--color-orange);
+  --button-accent-hover: var(--color-orange-hover);
+}
+
 .header[data-theme='light'] {
   --header-bg: var(--color-white);
   --header-fg: var(--color-text);
@@ -46,11 +53,14 @@
   height: 2.5rem;
 }
 
-/* O selo é redondo e tem texto em volta: usa quase toda a altura do cabeçalho. */
+/*
+  O selo é redondo e tem texto em volta: usa quase toda a altura do cabeçalho.
+  A versão branca não tem o disco de fundo, então pode ser um pouco maior.
+*/
 .seal {
   display: block;
   width: auto;
-  height: 3.25rem;
+  height: 3.5rem;
 }
 
 .desktopNav,
@@ -74,7 +84,7 @@
   }
 
   .seal {
-    height: 4.25rem;
+    height: 4.5rem;
   }
 
   .desktopNav {

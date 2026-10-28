@@ -10,6 +10,9 @@
   --color-accent: #47a442;
   --color-accent-strong: #367c32;
   --color-accent-strong-hover: #2d6a2a;
+  /* Laranja dos botões da página de Serviços (texto branco 4,68:1; no hover 6,07:1) */
+  --color-orange: #cf4410;
+  --color-orange-hover: #b03a0d;
   /* Verde claro para texto sobre o azul principal (o verde do Figma ali dá só 2,2:1) */
   --color-accent-on-primary: #a8e4a3;
   /* Mensagens de erro sobre fundo azul e sobre fundo branco */

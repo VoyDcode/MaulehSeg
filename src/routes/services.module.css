@@ -1,0 +1,7 @@
+/* Só nesta página os botões verdes ficam laranja. display: contents não muda o layout. */
+.page {
+  --button-accent: var(--color-orange);
+  --button-accent-hover: var(--color-orange-hover);
+
+  display: contents;
+}
