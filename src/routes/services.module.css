@@ -1,7 +1,23 @@
-/* Só nesta página os botões verdes ficam laranja. display: contents não muda o layout. */
+/*
+  Só em Serviços (listagem e detalhe) a paleta é preto e laranja: os tokens azuis e
+  verdes usados pelos componentes compartilhados são trocados aqui, sem afetar
+  Treinamentos e Consultoria.
+  display: contents não muda o layout, e as variáveis continuam sendo herdadas.
+*/
 .page {
   --button-accent: var(--color-orange);
   --button-accent-hover: var(--color-orange-hover);
+
+  /* Azul → preto: faixas, títulos dos cards, botões da galeria, foco */
+  --color-primary: var(--color-black);
+  --color-primary-dark: var(--color-black);
+  --color-primary-tint: var(--color-neutral-tint);
+
+  /* Verde → laranja: destaques, "Veja +", campos obrigatórios, checkbox */
+  --color-accent: var(--color-orange);
+  --color-accent-strong: var(--color-orange);
+  --color-accent-strong-hover: var(--color-orange-hover);
+  --color-accent-on-primary: var(--color-orange-on-dark);
 
   display: contents;
 }
