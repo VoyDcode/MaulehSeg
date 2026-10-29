@@ -7,3 +7,10 @@ const whatsappNumber = site.phone.href.replace(/\D/g, '')
 export function whatsappUrl(message: string): string {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 }
+
+/** Mensagem padrão para quem prefere chamar no WhatsApp: cita o serviço quando ele já foi escolhido. */
+export function standardWhatsappMessage(serviceLabel?: string): string {
+  return serviceLabel
+    ? `Olá! Vim pelo site da MaulehSeg e gostaria de um orçamento para ${serviceLabel}.`
+    : 'Olá! Vim pelo site da MaulehSeg e gostaria de um orçamento.'
+}

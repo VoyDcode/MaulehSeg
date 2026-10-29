@@ -11,6 +11,7 @@
   --form-success-bg: rgb(255 255 255 / 0.12);
   --form-success-icon: var(--color-accent-on-primary);
   --form-link: var(--color-white);
+  --form-failure-bg: rgb(255 210 210 / 0.14);
 
   container-type: inline-size;
   display: grid;
@@ -33,6 +34,7 @@
   --form-success-bg: var(--color-primary-tint);
   --form-success-icon: var(--color-accent-strong);
   --form-link: var(--color-primary);
+  --form-failure-bg: #fdecea;
 }
 
 @container (min-width: 30rem) {
@@ -192,4 +194,58 @@
 .successLink {
   color: var(--form-link);
   text-decoration: underline;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Link secundário: quem não quer preencher o formulário chama direto no WhatsApp */
+.whatsapp {
+  font-size: var(--text-sm);
+  color: var(--form-muted);
+}
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  font-weight: 600;
+  color: var(--form-link);
+  text-underline-offset: 0.2em;
+}
+
+.whatsappIcon {
+  flex: none;
+  font-size: 1.15em;
+}
+
+.sending {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--form-muted);
+}
+
+.failure {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--form-failure-bg);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--form-text);
+}
+
+.failureIcon {
+  flex: none;
+  margin-top: 0.1em;
+  font-size: 1.25em;
+  color: var(--form-error);
 }

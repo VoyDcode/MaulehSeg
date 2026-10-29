@@ -1,4 +1,4 @@
-import { whatsappUrl } from '../lib/whatsapp'
+import { standardWhatsappMessage, whatsappUrl } from '../lib/whatsapp'
 import type { ContactPageContent, HomeContent, QuoteOptionGroup } from '../types/content'
 import { clients } from './clients'
 import { quoteOptions } from './quote-options'
@@ -23,7 +23,7 @@ export const contactPage: ContactPageContent = {
         kind: 'whatsapp',
         label: 'WhatsApp',
         value: site.phone.display,
-        href: whatsappUrl('Olá! Vim pelo site da MaulehSeg e gostaria de falar sobre um orçamento.'),
+        href: whatsappUrl(standardWhatsappMessage()),
       },
       { kind: 'phone', label: 'Telefone', value: site.phone.display, href: site.phone.href },
       { kind: 'email', label: 'E-mail', value: site.email, href: `mailto:${site.email}` },
