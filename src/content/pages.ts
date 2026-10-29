@@ -27,6 +27,11 @@ export const pages = {
     description:
       'Gestão em segurança do trabalho, equipes de SESMT para indústrias e construtoras e suporte a atividades de alto risco, como paradas de manutenção.',
   },
+  contact: {
+    title: 'Fale conosco',
+    description:
+      'Solicite um orçamento de serviços em altura, treinamentos em NRs ou consultoria em segurança do trabalho. Fale com a MaulehSeg pelo formulário, WhatsApp ou e-mail.',
+  },
   notFound: {
     title: 'Página não encontrada',
     description: 'O endereço acessado não existe ou foi alterado.',

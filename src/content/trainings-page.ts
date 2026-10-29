@@ -11,7 +11,7 @@ import chamadaWebp900 from '../assets/images/trainings/chamada-treino-pratico-90
 
 // Mesmo layout de Serviços (wireframe 04 = 03 com outros textos).
 // Fica separado de trainings.ts porque navigation.ts importa a lista (evita import circular).
-// O botão usa o mesmo destino do "Fale conosco" (destino ainda em aberto no handoff).
+// O botão de orçamento leva para a página /contato, o mesmo destino do "Fale conosco".
 const budgetAction = { label: 'Solicitar orçamento', href: contactCta.href }
 
 export const trainingsPage: ListingPageContent = {

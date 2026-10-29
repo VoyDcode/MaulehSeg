@@ -1,0 +1,251 @@
+/*
+  Duas versões com as mesmas regras, trocando só as cores:
+  padrão (escura) sobre a faixa azul, e .light dentro de um card branco.
+*/
+.form {
+  --form-text: var(--color-white);
+  --form-muted: rgb(255 255 255 / 0.85);
+  --form-required: var(--color-accent-on-primary);
+  --form-error: var(--color-error-on-dark);
+  --form-field-border: transparent;
+  --form-success-bg: rgb(255 255 255 / 0.12);
+  --form-success-icon: var(--color-accent-on-primary);
+  --form-link: var(--color-white);
+  --form-failure-bg: rgb(255 210 210 / 0.14);
+
+  container-type: inline-size;
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* Figma: os quatro primeiros campos em grade 2x2 */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-4);
+}
+
+.light {
+  --form-text: var(--color-text);
+  --form-muted: var(--color-text-muted);
+  --form-required: var(--color-accent-strong);
+  --form-error: var(--color-error);
+  --form-field-border: var(--color-field-border);
+  --form-success-bg: var(--color-primary-tint);
+  --form-success-icon: var(--color-accent-strong);
+  --form-link: var(--color-primary);
+  --form-failure-bg: #fdecea;
+}
+
+@container (min-width: 30rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--form-text);
+}
+
+.required {
+  margin-inline-start: 0.2em;
+  color: var(--form-required);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: 0.625rem 0.875rem;
+  border: 2px solid var(--form-field-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-text);
+  /* 16px no mínimo: abaixo disso o iPhone dá zoom ao focar o campo */
+  font-size: max(1rem, var(--text-base));
+  line-height: var(--leading-snug);
+}
+
+.light .input,
+.light .select,
+.light .textarea {
+  border-width: 1px;
+}
+
+.select {
+  appearance: none;
+  padding-inline-end: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f51be' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  cursor: pointer;
+}
+
+.textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.input:focus-visible,
+.select:focus-visible,
+.textarea:focus-visible {
+  outline-offset: 2px;
+}
+
+.input[aria-invalid='true'],
+.select[aria-invalid='true'],
+.checkbox[aria-invalid='true'] {
+  border-color: var(--form-error);
+  box-shadow: 0 0 0 2px var(--form-error);
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--form-error);
+}
+
+.errorIcon {
+  flex: none;
+  margin-top: 0.1em;
+  font-size: 1.1em;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.checkbox {
+  flex: none;
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0.05rem 0 0;
+  border-radius: 0.25rem;
+  accent-color: var(--color-accent-strong);
+  cursor: pointer;
+}
+
+.consentLabel {
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  color: var(--form-text);
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.submit {
+  min-width: 10rem;
+}
+
+.note {
+  flex: 1 1 16rem;
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  color: var(--form-muted);
+}
+
+/* Vazia, a região de aviso continua no DOM (para ser anunciada) mas não ocupa espaço */
+.status:empty {
+  margin-top: calc(-1 * var(--space-4));
+}
+
+.success {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--form-success-bg);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--form-text);
+}
+
+.successIcon {
+  flex: none;
+  margin-top: 0.1em;
+  font-size: 1.25em;
+  color: var(--form-success-icon);
+}
+
+.successLink {
+  color: var(--form-link);
+  text-decoration: underline;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Link secundário: quem não quer preencher o formulário chama direto no WhatsApp */
+.whatsapp {
+  font-size: var(--text-sm);
+  color: var(--form-muted);
+}
+
+.whatsappLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target);
+  font-weight: 600;
+  color: var(--form-link);
+  text-underline-offset: 0.2em;
+}
+
+.whatsappIcon {
+  flex: none;
+  font-size: 1.15em;
+}
+
+.sending {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--form-muted);
+}
+
+.failure {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  background-color: var(--form-failure-bg);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  color: var(--form-text);
+}
+
+.failureIcon {
+  flex: none;
+  margin-top: 0.1em;
+  font-size: 1.25em;
+  color: var(--form-error);
+}

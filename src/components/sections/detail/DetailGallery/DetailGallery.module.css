@@ -1,0 +1,19 @@
+.section {
+  --focus-color: var(--color-primary);
+
+  background-color: var(--color-white);
+  padding-block: var(--space-7) var(--space-section);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-5);
+  max-width: calc(48rem + 2 * var(--gutter));
+}
+
+.title {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  text-align: center;
+  color: var(--color-text);
+}

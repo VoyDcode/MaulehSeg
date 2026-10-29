@@ -6,9 +6,10 @@ import { ListingHero } from '../components/sections/listing/ListingHero/ListingH
 import { pages } from '../content/pages'
 import { servicesPage } from '../content/services-page'
 import { pageMeta } from '../lib/meta'
+import styles from './services.module.css'
 
-// Nesta página o cabeçalho mostra o selo de resgate técnico no lugar do logo padrão.
-export const handle: HeaderHandle = { headerBrand: 'selo' }
+// Nesta página o cabeçalho é preto e mostra o selo de resgate técnico no lugar do logo padrão.
+export const handle: HeaderHandle = { headerBrand: 'selo', headerTheme: 'dark' }
 
 export const meta: Route.MetaFunction = () => pageMeta(pages.services)
 
@@ -16,10 +17,11 @@ export default function ServicesRoute() {
   const { hero, list, cta } = servicesPage
 
   return (
-    <>
-      <ListingHero content={hero} />
+    <div className={styles.page}>
+      {/* Banner preto, combinando com o cabeçalho preto desta página */}
+      <ListingHero content={hero} tone="dark" />
       <ListingGrid content={list} />
       <ListingCta content={cta} />
-    </>
+    </div>
   )
 }

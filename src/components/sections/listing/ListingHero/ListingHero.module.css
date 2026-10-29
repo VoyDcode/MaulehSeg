@@ -6,6 +6,10 @@
   padding-block: var(--space-section);
 }
 
+.hero[data-tone='dark'] {
+  background-color: var(--color-black);
+}
+
 /* Wireframe: título, texto e botão centralizados */
 .inner {
   display: flex;

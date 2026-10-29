@@ -1,0 +1,4 @@
+/* Na Home a seção de clientes vem logo depois de outra; aqui ela precisa do espaço de cima */
+.clients {
+  padding-top: var(--space-section);
+}

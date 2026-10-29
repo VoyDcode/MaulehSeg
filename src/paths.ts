@@ -5,4 +5,5 @@ export const paths = {
   trainings: '/treinamentos',
   consulting: '/consultoria',
   projects: '/projetos',
+  contact: '/contato',
 } as const

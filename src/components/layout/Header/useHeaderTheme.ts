@@ -1,6 +1,7 @@
 import { useMatches } from 'react-router'
 
-export type HeaderTheme = 'light' | 'brand'
+/** brand: azul (padrão). light: branco (Home). dark: preto (Serviços). */
+export type HeaderTheme = 'light' | 'brand' | 'dark'
 
 /** Marca do cabeçalho: o logo padrão ou o selo de resgate técnico (página de Serviços). */
 export type HeaderBrand = 'logo' | 'selo'

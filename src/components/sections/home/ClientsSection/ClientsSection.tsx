@@ -4,11 +4,16 @@ import { Carousel } from '../../../ui/Carousel/Carousel'
 import { Container } from '../../../ui/Container/Container'
 import styles from './ClientsSection.module.css'
 
-export function ClientsSection({ content }: { content: HomeContent['clients'] }) {
+interface ClientsSectionProps {
+  content: HomeContent['clients']
+  className?: string
+}
+
+export function ClientsSection({ content, className }: ClientsSectionProps) {
   const { title, items } = content
 
   return (
-    <section className={styles.section} aria-labelledby="clientes-titulo">
+    <section className={cx(styles.section, className)} aria-labelledby="clientes-titulo">
       <Container>
         <h2 id="clientes-titulo" className={styles.title}>
           {title}

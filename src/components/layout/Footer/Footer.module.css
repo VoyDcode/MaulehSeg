@@ -67,8 +67,42 @@
   padding-top: var(--space-1);
 }
 
-.watermark {
+/* Crédito discreto de quem fez o site, separado por uma linha fina */
+.credits {
   margin-top: var(--space-8);
+  font-size: var(--text-xs);
+  color: var(--color-on-dark-muted);
+}
+
+/* A linha fica no parágrafo para alinhar com o conteúdo (o Container tem respiro nas laterais) */
+.credits p {
+  padding-top: var(--space-5);
+  border-top: 1px solid rgb(255 255 255 / 0.12);
+}
+
+.credits a {
+  color: inherit;
+  text-underline-offset: 0.2em;
+}
+
+.credits a:hover {
+  color: var(--color-white);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.watermark {
+  margin-top: var(--space-7);
   margin-bottom: -0.14em;
   font-family: var(--font-display);
   font-size: clamp(4.5rem, 19vw, 17rem);

@@ -1,0 +1,46 @@
+.body {
+  background-color: var(--color-white);
+  padding-block: var(--space-section) var(--space-7);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-8);
+  /* largura de leitura confortável, como a coluna estreita do Figma */
+  max-width: calc(var(--measure) + 2 * var(--gutter));
+}
+
+.block {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  text-align: center;
+  color: var(--color-accent-strong);
+}
+
+.paragraph {
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-inline-start: 1.25em;
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.list > li {
+  padding-inline-start: var(--space-1);
+}
+
+.list > li::marker {
+  color: var(--color-accent-strong);
+}

@@ -57,6 +57,7 @@ export const companyLinks: NavLink[] = [
   { label: 'Serviços', href: paths.services },
   { label: 'Treinamentos', href: paths.trainings },
   { label: 'Consultoria', href: paths.consulting },
+  { label: 'Fale conosco', href: paths.contact },
 ]
 
-export const contactCta: NavLink = { label: 'Fale conosco', href: '#contato' }
+export const contactCta: NavLink = { label: 'Fale conosco', href: paths.contact }

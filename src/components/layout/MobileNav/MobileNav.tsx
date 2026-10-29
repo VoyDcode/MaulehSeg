@@ -66,7 +66,7 @@ export function MobileNav({ items, cta, className }: MobileNavProps) {
 
       <dialog ref={dialogRef} id={dialogId} className={styles.dialog} aria-label="Menu" onClose={handleClose}>
         <div className={styles.top}>
-          <BrandMark className={styles.logo} sealClassName={styles.seal} />
+          <BrandMark className={styles.logo} sealClassName={styles.seal} surface="light" />
           <button type="button" className={styles.iconButton} aria-label="Fechar menu" onClick={close}>
             <CloseIcon />
           </button>
