@@ -4,6 +4,8 @@ import { contactCta } from './navigation'
 import { pages } from './pages'
 import { services } from './services'
 
+import seloBranco from '../assets/images/brand/selo-resgate-tecnico-branco.svg'
+
 import escritorioAvif640 from '../assets/images/services/orcamento-escritorio-640.avif'
 import escritorioAvif1024 from '../assets/images/services/orcamento-escritorio-1024.avif'
 import escritorioWebp640 from '../assets/images/services/orcamento-escritorio-640.webp'
@@ -20,6 +22,8 @@ export const servicesPage: ListingPageContent = {
     title: 'Segurança em altura para cada necessidade',
     text: pages.services.description,
     action: budgetAction,
+    // Pedido do cliente: selo em destaque no topo da página
+    emblem: { src: seloBranco, width: 256, height: 256 },
   },
   list: {
     title: 'Nossos serviços',

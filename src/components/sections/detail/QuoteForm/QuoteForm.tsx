@@ -197,7 +197,9 @@ export function QuoteForm({ groups, defaultService = '', messageLabel, tone = 'd
       setHasTriedToSend(false)
       setErrors({})
       setStatus({ kind: 'sentByEmail' })
-    } catch {
+    } catch (error) {
+      // O motivo (chave inválida, limite do mês, sem internet) fica no console para quem for investigar
+      console.error('Pedido de orçamento não enviado pelo Web3Forms:', error)
       setStatus({ kind: 'failed', whatsappUrl: whatsappWithQuote })
     }
   }

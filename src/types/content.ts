@@ -7,6 +7,11 @@ export interface ContentItem {
   image?: ResponsiveImage
   /** Código curto da norma (ex.: NR-10), mostrado no card quando não há foto. */
   code?: string
+  /**
+   * A foto é de banco de imagens, não de um trabalho da MaulehSeg: aparece só no card
+   * e fica fora da galeria "Fotos de trabalhos da MaulehSeg" das páginas de detalhe.
+   */
+  stockImage?: boolean
 }
 
 /**
@@ -18,6 +23,8 @@ export interface ListingPageContent {
     title: string
     text: string
     action: NavLink
+    /** Selo ou marca em destaque acima do título (decorativo: o cabeçalho já tem o nome da marca). */
+    emblem?: { src: string; width: number; height: number }
   }
   list: {
     /** Título da grade, lido só por leitores de tela (o wireframe não mostra). */
@@ -195,6 +202,12 @@ export interface AboutContent {
     image?: ResponsiveImage
   }
   panoramic?: ResponsiveImage
+  /** Texto "Quem Somos" com a história da empresa. */
+  story: {
+    eyebrow: string
+    title: string
+    paragraphs: string[]
+  }
   values: {
     id: string
     items: ValueStripItem[]

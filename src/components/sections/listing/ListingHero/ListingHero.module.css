@@ -19,6 +19,14 @@
   text-align: center;
 }
 
+/* Selo em destaque acima do título (pedido do cliente na página de Serviços) */
+.emblem {
+  display: block;
+  width: clamp(8rem, 5rem + 9vw, 12rem);
+  height: auto;
+  margin-bottom: var(--space-2);
+}
+
 .title {
   max-width: 20ch;
   font-size: var(--text-5xl);

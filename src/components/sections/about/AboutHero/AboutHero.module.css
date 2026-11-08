@@ -37,7 +37,8 @@
   font-size: var(--text-5xl);
   font-weight: 700;
   line-height: var(--leading-tight);
-  color: var(--color-accent);
+  /* Pedido do cliente: título em branco (o verde sobre o azul ficava difícil de ler) */
+  color: var(--color-white);
 }
 
 .text {

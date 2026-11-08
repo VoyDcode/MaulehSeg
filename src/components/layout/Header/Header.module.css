@@ -63,6 +63,20 @@
   height: 3.5rem;
 }
 
+/*
+  Serviços: pedido do cliente, selo com mais destaque e inteiro dentro do cabeçalho.
+  O cabeçalho dessas páginas fica mais alto para caber o selo grande. A altura vem de
+  --header-height, que também afasta as âncoras do cabeçalho (scroll-padding em
+  global.css) e posiciona o formulário fixo das páginas de detalhe.
+*/
+:root:has(.header[data-theme='dark']) {
+  --header-height: 6rem;
+}
+
+.header[data-theme='dark'] .seal {
+  height: 5.5rem;
+}
+
 .desktopNav,
 .cta {
   display: none;
@@ -85,6 +99,14 @@
 
   .seal {
     height: 4.5rem;
+  }
+
+  :root:has(.header[data-theme='dark']) {
+    --header-height: 9rem;
+  }
+
+  .header[data-theme='dark'] .seal {
+    height: 8.25rem;
   }
 
   .desktopNav {

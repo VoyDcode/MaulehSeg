@@ -1,5 +1,5 @@
 import type { ContentItem } from '../types/content'
-import { cardImage } from './card-image'
+import { cardImage, stockCardPhoto } from './card-image'
 
 import nr35Avif640 from '../assets/images/trainings/nr35-treino-pratico-640.avif'
 import nr35Avif900 from '../assets/images/trainings/nr35-treino-pratico-900.avif'
@@ -21,57 +21,160 @@ import resgateAvif1024 from '../assets/images/trainings/resgate-tecnico-suspensa
 import resgateWebp640 from '../assets/images/trainings/resgate-tecnico-suspensao-640.webp'
 import resgateWebp1024 from '../assets/images/trainings/resgate-tecnico-suspensao-1024.webp'
 
+/*
+  PROVISÓRIO: fotos gratuitas do Unsplash (licença Unsplash, uso livre e sem
+  atribuição obrigatória), só até o Maurício mandar fotos das próprias turmas.
+  NR-05 unsplash.com/photos/7TR0TGS7zqg · NR-06 unsplash.com/photos/wp81DxKUd1E
+  NR-10 unsplash.com/photos/LMb98OOtoYU · NR-11 unsplash.com/photos/F2C_mSrb6iM
+  NR-12 unsplash.com/photos/hTUdXgbhd3o · NR-17 unsplash.com/photos/SygiiWDeX1I
+  NR-18 unsplash.com/photos/fBtNXtM4o3k · NR-20 unsplash.com/photos/hvQeqS1Nj3c
+*/
+import nr05Avif640 from '../assets/images/trainings/nr05-equipe-reunida-640.avif'
+import nr05Avif1024 from '../assets/images/trainings/nr05-equipe-reunida-1024.avif'
+import nr05Webp640 from '../assets/images/trainings/nr05-equipe-reunida-640.webp'
+import nr05Webp1024 from '../assets/images/trainings/nr05-equipe-reunida-1024.webp'
+
+import nr06Avif640 from '../assets/images/trainings/nr06-capacetes-epi-640.avif'
+import nr06Avif1024 from '../assets/images/trainings/nr06-capacetes-epi-1024.avif'
+import nr06Webp640 from '../assets/images/trainings/nr06-capacetes-epi-640.webp'
+import nr06Webp1024 from '../assets/images/trainings/nr06-capacetes-epi-1024.webp'
+
+import nr10Avif640 from '../assets/images/trainings/nr10-painel-eletrico-640.avif'
+import nr10Avif1024 from '../assets/images/trainings/nr10-painel-eletrico-1024.avif'
+import nr10Webp640 from '../assets/images/trainings/nr10-painel-eletrico-640.webp'
+import nr10Webp1024 from '../assets/images/trainings/nr10-painel-eletrico-1024.webp'
+
+import nr11Avif640 from '../assets/images/trainings/nr11-empilhadeira-armazem-640.avif'
+import nr11Avif1024 from '../assets/images/trainings/nr11-empilhadeira-armazem-1024.avif'
+import nr11Webp640 from '../assets/images/trainings/nr11-empilhadeira-armazem-640.webp'
+import nr11Webp1024 from '../assets/images/trainings/nr11-empilhadeira-armazem-1024.webp'
+
+import nr12Avif640 from '../assets/images/trainings/nr12-operador-torno-640.avif'
+import nr12Avif1024 from '../assets/images/trainings/nr12-operador-torno-1024.avif'
+import nr12Webp640 from '../assets/images/trainings/nr12-operador-torno-640.webp'
+import nr12Webp1024 from '../assets/images/trainings/nr12-operador-torno-1024.webp'
+
+import nr17Avif640 from '../assets/images/trainings/nr17-mesas-regulaveis-640.avif'
+import nr17Avif1024 from '../assets/images/trainings/nr17-mesas-regulaveis-1024.avif'
+import nr17Webp640 from '../assets/images/trainings/nr17-mesas-regulaveis-640.webp'
+import nr17Webp1024 from '../assets/images/trainings/nr17-mesas-regulaveis-1024.webp'
+
+import nr18Avif640 from '../assets/images/trainings/nr18-equipe-obra-640.avif'
+import nr18Avif1024 from '../assets/images/trainings/nr18-equipe-obra-1024.avif'
+import nr18Webp640 from '../assets/images/trainings/nr18-equipe-obra-640.webp'
+import nr18Webp1024 from '../assets/images/trainings/nr18-equipe-obra-1024.webp'
+
+import nr20Avif640 from '../assets/images/trainings/nr20-tanques-armazenamento-640.avif'
+import nr20Avif1024 from '../assets/images/trainings/nr20-tanques-armazenamento-1024.avif'
+import nr20Webp640 from '../assets/images/trainings/nr20-tanques-armazenamento-640.webp'
+import nr20Webp1024 from '../assets/images/trainings/nr20-tanques-armazenamento-1024.webp'
+
 // Conforme o portfólio da empresa.
-// PROVISÓRIO: confirmar os resumos com o Maurício. Os treinamentos sem foto
-// própria mostram o código da norma no card.
+// PROVISÓRIO: confirmar os resumos com o Maurício.
 export const trainings: ContentItem[] = [
   {
     slug: 'nr-05-cipa',
     title: 'NR-05 – CIPA',
     code: 'NR-05',
     summary: 'Formação dos membros da CIPA para identificar riscos, investigar acidentes e propor melhorias no trabalho.',
+    ...stockCardPhoto(
+      'Grupo de trabalhadores de capacete e colete reunidos no local de trabalho',
+      nr05Avif640,
+      nr05Avif1024,
+      nr05Webp640,
+      nr05Webp1024,
+    ),
   },
   {
     slug: 'nr-06-epi',
     title: 'NR-06 – Equipamento de proteção individual',
     code: 'NR-06',
     summary: 'Escolha, uso correto, conservação e guarda dos equipamentos de proteção individual de cada atividade.',
+    ...stockCardPhoto(
+      'Estantes com capacetes de segurança guardados lado a lado',
+      nr06Avif640,
+      nr06Avif1024,
+      nr06Webp640,
+      nr06Webp1024,
+    ),
   },
   {
     slug: 'nr-10-seguranca-em-eletricidade',
     title: 'NR-10 – Segurança em instalações elétricas',
     code: 'NR-10',
     summary: 'Prevenção de choques e acidentes em instalações e serviços com eletricidade, para quem atua na área.',
+    ...stockCardPhoto(
+      'Eletricista com capacete e protetor facial trabalhando em um painel elétrico',
+      nr10Avif640,
+      nr10Avif1024,
+      nr10Webp640,
+      nr10Webp1024,
+    ),
   },
   {
     slug: 'nr-11-movimentacao-de-materiais',
     title: 'NR-11 – Movimentação e manuseio de materiais',
     code: 'NR-11',
     summary: 'Operação segura de empilhadeiras e equipamentos de transporte, movimentação e armazenagem de materiais.',
+    ...stockCardPhoto(
+      'Empilhadeira transportando carga entre as estantes de um armazém',
+      nr11Avif640,
+      nr11Avif1024,
+      nr11Webp640,
+      nr11Webp1024,
+    ),
   },
   {
     slug: 'nr-12-maquinas-e-equipamentos',
     title: 'NR-12 – Máquinas e equipamentos',
     code: 'NR-12',
     summary: 'Uso seguro de máquinas e equipamentos, com foco nas proteções, nos dispositivos de parada e nos riscos da operação.',
+    ...stockCardPhoto(
+      'Operador de capacete trabalhando em um torno industrial',
+      nr12Avif640,
+      nr12Avif1024,
+      nr12Webp640,
+      nr12Webp1024,
+    ),
   },
   {
     slug: 'nr-17-ergonomia',
     title: 'NR-17 – Ergonomia',
     code: 'NR-17',
     summary: 'Postura, organização do trabalho e levantamento de cargas para prevenir lesões e afastamentos.',
+    ...stockCardPhoto(
+      'Pessoas trabalhando em pé em mesas de altura regulável em um escritório',
+      nr17Avif640,
+      nr17Avif1024,
+      nr17Webp640,
+      nr17Webp1024,
+    ),
   },
   {
     slug: 'nr-18-construcao-civil',
     title: 'NR-18 – Segurança na indústria da construção civil',
     code: 'NR-18',
     summary: 'Segurança nos canteiros de obra, do planejamento à execução das atividades da construção civil.',
+    ...stockCardPhoto(
+      'Dois trabalhadores de capacete e colete montando ferragens em uma obra',
+      nr18Avif640,
+      nr18Avif1024,
+      nr18Webp640,
+      nr18Webp1024,
+    ),
   },
   {
     slug: 'nr-20-inflamaveis',
     title: 'NR-20 – Segurança com líquidos inflamáveis',
     code: 'NR-20',
     summary: 'Prevenção de incêndios e explosões no manuseio, armazenamento e transporte de inflamáveis e combustíveis.',
+    ...stockCardPhoto(
+      'Tanques industriais de armazenamento ao lado de uma estrutura de tubulações',
+      nr20Avif640,
+      nr20Avif1024,
+      nr20Webp640,
+      nr20Webp1024,
+    ),
   },
   {
     slug: 'nr-23-brigada-de-incendio',

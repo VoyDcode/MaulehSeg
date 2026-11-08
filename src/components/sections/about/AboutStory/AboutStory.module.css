@@ -1,0 +1,46 @@
+.story {
+  background-color: var(--color-white);
+  padding-block: var(--space-section);
+}
+
+/* Celular: título em cima do texto. Desktop: título à esquerda, texto à direita */
+.inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 64rem) {
+  .inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-9);
+    align-items: start;
+  }
+}
+
+.heading {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-accent-strong);
+}
+
+.title {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  color: var(--color-primary);
+}
+
+.text {
+  display: grid;
+  gap: var(--space-4);
+  max-width: var(--measure);
+  font-size: var(--text-lg);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+}

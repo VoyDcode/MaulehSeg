@@ -1,5 +1,6 @@
 import type { Route } from './+types/about'
 import { AboutHero } from '../components/sections/about/AboutHero/AboutHero'
+import { AboutStory } from '../components/sections/about/AboutStory/AboutStory'
 import { NavCards } from '../components/sections/about/NavCards/NavCards'
 import { PanoramicStrip } from '../components/sections/about/PanoramicStrip/PanoramicStrip'
 import { ValueStrip } from '../components/sections/about/ValueStrip/ValueStrip'
@@ -26,12 +27,13 @@ export const links: Route.LinksFunction = () => {
 }
 
 export default function AboutRoute() {
-  const { hero, panoramic, values, navCards } = aboutContent
+  const { hero, panoramic, story, values, navCards } = aboutContent
 
   return (
     <>
       <AboutHero content={hero} />
       {panoramic && <PanoramicStrip image={panoramic} />}
+      <AboutStory content={story} />
       <div id={values.id}>
         {values.items.map((item) => (
           <ValueStrip key={item.label} item={item} />

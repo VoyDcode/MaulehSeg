@@ -35,6 +35,10 @@ src/
 
 Os dados ainda não oficiais ficam em `src/content/` e estão marcados com `PROVISÓRIO`.
 
+## Formulário de orçamento
+
+Os pedidos chegam por e-mail pelo [Web3Forms](https://web3forms.com), no plano gratuito (250 envios por mês). A chave fica no `.env`, em `VITE_WEB3FORMS_ACCESS_KEY`; para testar com uma chave sua, use um `.env.local` (fica fora do git) e reinicie o `npm run dev`. Sem chave, o formulário abre o WhatsApp com a mensagem pronta. Detalhes em `src/lib/quote-email.ts`.
+
 ## Hospedagem
 
 O build é estático (`ssr: false`): cada rota vira `build/client/<rota>/index.html`. Rotas não pré-renderizadas, como a página 404, precisam que o servidor devolva `build/client/__spa-fallback.html`.

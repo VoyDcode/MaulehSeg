@@ -40,7 +40,7 @@ export const homeContent: HomeContent = {
     text: [
       { text: 'Trabalhamos para que cada colaborador ' },
       { text: 'volte para casa em segurança', highlight: true },
-      { text: ' e para que a sua empresa esteja sempre em dia com as NRs e o eSocial.' },
+      { text: ' e para que a sua empresa esteja sempre em conformidade com as normas regulamentadoras.' },
     ],
     stats: [
       { value: '+15', label: 'Anos de experiência' },

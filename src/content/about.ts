@@ -1,5 +1,6 @@
 import { paths } from '../paths'
 import type { AboutContent } from '../types/content'
+import { trainings } from './trainings'
 
 import donoAvif640 from '../assets/images/about/dono-sorrindo-640.avif'
 import donoAvif1024 from '../assets/images/about/dono-sorrindo-1024.avif'
@@ -14,6 +15,17 @@ import resgateAvif1600 from '../assets/images/about/resgate-ar-livre-1600.avif'
 import resgateWebp640 from '../assets/images/about/resgate-ar-livre-640.webp'
 import resgateWebp1024 from '../assets/images/about/resgate-ar-livre-1024.webp'
 import resgateWebp1600 from '../assets/images/about/resgate-ar-livre-1600.webp'
+
+// "NR-05, NR-06, ..., NR-35 e NBR 16710", a partir dos códigos da lista de treinamentos.
+// O "word joiner" (U+2060, invisível) depois do hífen e o espaço fixo (U+00A0) impedem
+// que um código fique partido entre duas linhas, como "NR-" numa linha e "12" na outra.
+// (O hífen fixo U+2011 não existe na fonte Barlow e apareceria com outra fonte.)
+function trainingCodes(): string {
+  const codes = trainings.flatMap((training) =>
+    training.code ? [training.code.replace('-', '-⁠').replace(' ', ' ')] : [],
+  )
+  return codes.length > 1 ? `${codes.slice(0, -1).join(', ')} e ${codes.at(-1)}` : codes.join('')
+}
 
 export const aboutContent: AboutContent = {
   hero: {
@@ -37,8 +49,7 @@ export const aboutContent: AboutContent = {
       sizes: '(min-width: 1024px) 38vw, 92vw',
       width: 1599,
       height: 1200,
-      // PROVISÓRIO: confirmar nome completo do Maurício
-      alt: 'Maurício, fundador e responsável técnico da MaulehSeg',
+      alt: 'Maurício Alves, fundador da MaulehSeg',
     },
   },
   panoramic: {
@@ -57,6 +68,18 @@ export const aboutContent: AboutContent = {
     width: 1600,
     height: 1200,
     alt: '',
+  },
+  story: {
+    eyebrow: 'Quem Somos',
+    title: 'Da simplicidade à excelência: nossa história',
+    // Texto enviado pelo cliente (com pequenos ajustes de pontuação e concordância).
+    // PROVISÓRIO: o texto original continua depois de "consultoria completa, moderna…"; falta o final.
+    paragraphs: [
+      'Toda grande jornada começa com um primeiro passo, e a MaulehSeg nasceu exatamente assim: de forma simples e despretensiosa.',
+      'Tudo começou quando Maurício Alves, o fundador, passou a ministrar treinamentos pontuais, movido pela paixão de compartilhar conhecimento e fazer a diferença no dia a dia dos trabalhadores.',
+      'O que era para ser uma atuação pontual logo revelou algo maior. A forma prática, humanizada e descomplicada com que os treinamentos eram conduzidos chamou a atenção do mercado.',
+      'Logo a demanda aumentou e, com ela, o compromisso de transformar a segurança do trabalho em um pilar estratégico para o sucesso das empresas.',
+    ],
   },
   values: {
     id: 'valores',
@@ -97,15 +120,15 @@ export const aboutContent: AboutContent = {
         href: '#valores',
       },
       {
-        // PROVISÓRIO
-        title: 'Serviços prestados',
+        // Pedido do cliente: no lugar de "Serviços prestados"
+        title: 'Consultoria em SST',
         description: 'PGR, laudos técnicos, eSocial SST e assessoria mensal.',
-        href: paths.services,
+        href: paths.consulting,
       },
       {
-        // PROVISÓRIO
         title: 'Treinamentos',
-        description: 'NR-35, NR-10, NR-33, CIPA e brigada de incêndio.',
+        // Todos os treinamentos da página, na ordem dela (atualiza sozinho quando a lista mudar)
+        description: `${trainingCodes()}.`,
         href: paths.trainings,
       },
       {

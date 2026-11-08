@@ -10,11 +10,22 @@ interface ListingHeroProps {
 }
 
 export function ListingHero({ content, tone = 'brand' }: ListingHeroProps) {
-  const { title, text, action } = content
+  const { title, text, action, emblem } = content
 
   return (
     <section className={styles.hero} data-tone={tone} aria-labelledby="pagina-titulo">
       <Container className={styles.inner}>
+        {emblem && (
+          <img
+            src={emblem.src}
+            width={emblem.width}
+            height={emblem.height}
+            alt=""
+            className={styles.emblem}
+            decoding="async"
+            fetchPriority="high"
+          />
+        )}
         <h1 id="pagina-titulo" className={styles.title}>
           {title}
         </h1>

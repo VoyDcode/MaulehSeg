@@ -76,6 +76,29 @@ export const serviceSections: Record<string, DetailSection[]> = {
     },
   ],
 
+  'montagem-de-linha-de-vida': [
+    {
+      title: 'O que é a montagem de linha de vida',
+      paragraphs: [
+        'É a montagem de uma linha de vida provisória para um serviço específico, como uma obra, uma reforma ou uma parada de manutenção. Ela dá ao trabalhador um ponto seguro para conectar o cinto de segurança enquanto não existe uma linha de vida definitiva, ou quando a existente não atende à atividade, e é desmontada quando o trabalho termina.',
+        'Mesmo sendo provisória, a linha de vida precisa ser dimensionada para a atividade e para a estrutura onde será fixada, e todos os componentes passam por inspeção antes do uso, como exige a NR-35.',
+      ],
+    },
+    {
+      title: 'Como a MaulehSeg trabalha',
+      paragraphs: [
+        'A equipe avalia o local e a atividade, monta o sistema, acompanha o uso durante o serviço e desmonta tudo ao final, sem deixar nada fixado na estrutura sem necessidade.',
+      ],
+      list: [
+        'Avaliação do local e da atividade',
+        'Escolha dos pontos de ancoragem',
+        'Montagem por equipe capacitada',
+        'Inspeção dos componentes antes do uso',
+        'Desmontagem ao fim do serviço',
+      ],
+    },
+  ],
+
   'limpeza-de-fachada': [
     {
       title: 'Como é a limpeza de fachada',

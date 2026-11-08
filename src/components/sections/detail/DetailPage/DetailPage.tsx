@@ -11,7 +11,8 @@ interface DetailPageProps {
   quoteOptions: QuoteOptionGroup[]
 }
 
-// A galeria começa pela foto do próprio item (quando ele tem) e segue com as da categoria.
+// A galeria começa pela foto do próprio item (quando ele tem uma foto de trabalho da
+// MaulehSeg, não de banco de imagens) e segue com as da categoria.
 function galleryFor(itemImage: ResponsiveImage | undefined, gallery: ResponsiveImage[]) {
   if (!itemImage) return gallery
   return [itemImage, ...gallery.filter((image) => image.src !== itemImage.src)]
@@ -31,7 +32,7 @@ export function DetailPage({ content, slug, quoteOptions }: DetailPageProps) {
         action={{ label: 'Solicitar orçamento', href: '#orcamento' }}
       />
       <DetailBody sections={content.sections[item.slug] ?? []} />
-      <DetailGallery images={galleryFor(item.image, content.gallery)} label="Fotos de trabalhos da MaulehSeg" />
+      <DetailGallery images={galleryFor(item.stockImage ? undefined : item.image, content.gallery)} label="Fotos de trabalhos da MaulehSeg" />
       <DetailContact
         content={content.contact}
         groups={quoteOptions}

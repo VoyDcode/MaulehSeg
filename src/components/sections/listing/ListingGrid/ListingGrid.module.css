@@ -47,6 +47,11 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-7) var(--space-6);
   }
+
+  /* Desktop: um card sozinho na última linha vai para a coluna do meio */
+  .grid > li:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
 }
 
 .grid > li {

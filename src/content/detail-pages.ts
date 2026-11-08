@@ -24,7 +24,9 @@ import resgateWebp1024 from '../assets/images/about/resgate-ar-livre-1024.webp'
 // PROVISÓRIO: o Figma também lista estados atendidos ("São Paulo, Rio de Janeiro..."). Confirmar com o cliente.
 const areasOfWork = 'Áreas de atuação: resgate técnico, acesso por cordas, treinamentos em NRs e consultoria em segurança do trabalho'
 
-const photosOf = (items: ContentItem[]) => items.flatMap((item) => (item.image ? [item.image] : []))
+// Só fotos de trabalhos da própria MaulehSeg: as de banco de imagens ficam de fora
+const photosOf = (items: ContentItem[]) =>
+  items.flatMap((item) => (item.image && !item.stockImage ? [item.image] : []))
 
 const resgateArLivre: ResponsiveImage = {
   src: resgateWebp1024,

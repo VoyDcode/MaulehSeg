@@ -17,3 +17,14 @@ export function cardImage(alt: string, avif: string, webp: string, src: string, 
     alt,
   }
 }
+
+/**
+ * Foto de banco de imagens no card, nas versões de 640 e 1024 px. Vem marcada como
+ * stockImage: aparece só no card e fica fora da galeria "Fotos de trabalhos da MaulehSeg".
+ */
+export function stockCardPhoto(alt: string, avif640: string, avif1024: string, webp640: string, webp1024: string) {
+  return {
+    image: cardImage(alt, `${avif640} 640w, ${avif1024} 1024w`, `${webp640} 640w, ${webp1024} 1024w`, webp1024, 1024),
+    stockImage: true,
+  }
+}
