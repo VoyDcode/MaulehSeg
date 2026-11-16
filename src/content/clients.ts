@@ -1,5 +1,6 @@
 import type { ClientLogo } from '../types/content'
 
+import passaroMarrom from '../assets/images/clients/passaro_marron.avif'
 import swaRealty from '../assets/images/clients/swa-realty.webp'
 import arcosEstruturas from '../assets/images/clients/arcos-estruturas.webp'
 import gatLogistica from '../assets/images/clients/gat-logistica.webp'
@@ -15,6 +16,8 @@ import taymontAndaimes from '../assets/images/clients/taymont-andaimes.webp'
   A ordem afasta os dois cards escuros, no carrossel e na grade do celular.
 */
 export const clients: ClientLogo[] = [
+  { name: 'Passaro Marrom', logo: { src: passaroMarrom, width: 188, height: 114 } },
+  { name: 'P', logo: { src: swaRealty, width: 188, height: 114 }, onDark: true },
   { name: 'SWA Realty', logo: { src: swaRealty, width: 188, height: 114 }, onDark: true },
   { name: 'Arcos Estruturas Metálicas', logo: { src: arcosEstruturas, width: 368, height: 200 } },
   { name: 'Slitteraço', logo: { src: slitteraco, width: 114, height: 121 } },

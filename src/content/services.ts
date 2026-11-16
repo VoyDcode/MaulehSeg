@@ -48,7 +48,7 @@ export const services: ContentItem[] = [
     slug: 'resgate-tecnico-industrial',
     title: 'Resgate técnico industrial',
     summary:
-      'Resgate de trabalhadores em altura e em espaços confinados, com plano de resgate pensado para a sua operação.',
+      'Fornecemos equipe de resgate devidamente capacitada para a sua empresa ou se preferir realizamos o treinamento da sua equipe de trabalhadores.',
     image: cardImage(
       'Profissional suspenso por cordas em treino de resgate, acompanhado por um instrutor',
       `${resgateAvif640} 640w, ${resgateAvif1024} 1024w`,

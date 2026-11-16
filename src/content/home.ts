@@ -14,7 +14,7 @@ export const homeContent: HomeContent = {
   hero: {
     title: 'Sua equipe protegida, sua empresa em conformidade',
     subtitle:
-      'Consultoria em segurança do trabalho, laudos técnicos e treinamentos em Normas Regulamentadoras para reduzir riscos, evitar autuações e fortalecer a cultura de prevenção.',
+      'Consultoria em segurança do trabalho, treinamentos e serviços.',
     primaryAction: { label: 'Conheça nossos serviços', href: paths.services },
     secondaryAction: { label: 'Quem é a MaulehSeg', href: `#${aboutId}` },
     image: {
