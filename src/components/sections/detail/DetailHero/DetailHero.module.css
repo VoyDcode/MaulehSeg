@@ -6,11 +6,48 @@
   padding-block: var(--space-8) var(--space-section);
 }
 
-.inner {
+.content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-4);
+}
+
+/*
+  Selo (Serviços): no celular fica pequeno, acima do rótulo; a partir de 48rem vai
+  para a direita do texto, grande e nas cores originais. A largura combina com o
+  `sizes` da imagem em content/seal.ts.
+*/
+.inner[data-emblem] {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.emblem {
+  display: block;
+  flex-shrink: 0;
+  width: 10rem;
+}
+
+.emblemImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 48rem) {
+  .inner[data-emblem] {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-7);
+  }
+
+  .emblem {
+    width: min(26vw, 25rem);
+  }
 }
 
 /* O verde do Figma sobre o azul fica ilegível (2,2:1); aqui vai o verde claro */

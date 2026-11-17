@@ -23,8 +23,8 @@ export interface ListingPageContent {
     title: string
     text: string
     action: NavLink
-    /** Selo ou marca em destaque acima do título (decorativo: o cabeçalho já tem o nome da marca). */
-    emblem?: { src: string; width: number; height: number }
+    /** Selo em destaque à direita do texto (pedido do cliente em Serviços). */
+    emblem?: ResponsiveImage
   }
   list: {
     /** Título da grade, lido só por leitores de tela (o wireframe não mostra). */
@@ -67,6 +67,8 @@ export interface DetailPageContent {
   sections: Record<string, DetailSection[]>
   /** Fotos da galeria. A galeria de cada página começa pela foto do próprio item. */
   gallery: ResponsiveImage[]
+  /** Selo em destaque à direita do título (pedido do cliente em Serviços). */
+  emblem?: ResponsiveImage
   contact: {
     /** Linha verde acima do título ("Áreas de atuação" no Figma). */
     eyebrow: string

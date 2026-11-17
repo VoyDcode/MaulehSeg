@@ -30,6 +30,7 @@ export function DetailPage({ content, slug, quoteOptions }: DetailPageProps) {
         title={item.title}
         text={item.summary}
         action={{ label: 'Solicitar orçamento', href: '#orcamento' }}
+        emblem={content.emblem}
       />
       <DetailBody sections={content.sections[item.slug] ?? []} />
       <DetailGallery images={galleryFor(item.stockImage ? undefined : item.image, content.gallery)} label="Fotos de trabalhos da MaulehSeg" />

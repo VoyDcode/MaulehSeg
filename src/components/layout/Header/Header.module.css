@@ -17,6 +17,8 @@
 /* Página de Serviços: preto, junto com o banner preto logo abaixo, e botão laranja */
 .header[data-theme='dark'] {
   --header-bg: var(--color-black);
+  /* No preto o capacete azul aparece bem (5,5:1), como no rodapé */
+  --logo-helmet: var(--color-logo-blue);
   --button-accent: var(--color-orange);
   --button-accent-hover: var(--color-orange-hover);
 }
@@ -53,30 +55,6 @@
   height: 2.5rem;
 }
 
-/*
-  O selo é redondo e tem texto em volta: usa quase toda a altura do cabeçalho.
-  A versão branca não tem o disco de fundo, então pode ser um pouco maior.
-*/
-.seal {
-  display: block;
-  width: auto;
-  height: 3.5rem;
-}
-
-/*
-  Serviços: pedido do cliente, selo com mais destaque e inteiro dentro do cabeçalho.
-  O cabeçalho dessas páginas fica mais alto para caber o selo grande. A altura vem de
-  --header-height, que também afasta as âncoras do cabeçalho (scroll-padding em
-  global.css) e posiciona o formulário fixo das páginas de detalhe.
-*/
-:root:has(.header[data-theme='dark']) {
-  --header-height: 6rem;
-}
-
-.header[data-theme='dark'] .seal {
-  height: 5.5rem;
-}
-
 .desktopNav,
 .cta {
   display: none;
@@ -95,18 +73,6 @@
 
   .logo {
     height: 3.5rem;
-  }
-
-  .seal {
-    height: 4.5rem;
-  }
-
-  :root:has(.header[data-theme='dark']) {
-    --header-height: 9rem;
-  }
-
-  .header[data-theme='dark'] .seal {
-    height: 8.25rem;
   }
 
   .desktopNav {

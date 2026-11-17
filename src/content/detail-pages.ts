@@ -6,6 +6,7 @@ import { consultingSections } from './details/consulting-sections'
 import { serviceSections } from './details/service-sections'
 import { trainingSections } from './details/training-sections'
 import { homeContent } from './home'
+import { sealImage } from './seal'
 import { services } from './services'
 import { servicesPage } from './services-page'
 import { trainings } from './trainings'
@@ -42,6 +43,7 @@ const resgateArLivre: ResponsiveImage = {
 
 const factoryTraining = homeContent.hero.image ? [homeContent.hero.image] : []
 
+
 // PROVISÓRIO: textos da faixa de contato e galerias montadas com as fotos que já temos.
 // O ideal é cada serviço ter as próprias fotos de obra (como no Figma).
 export const serviceDetailPage: DetailPageContent = {
@@ -50,6 +52,7 @@ export const serviceDetailPage: DetailPageContent = {
   items: services,
   sections: serviceSections,
   gallery: [...photosOf(services), resgateArLivre],
+  emblem: sealImage,
   contact: {
     eyebrow: areasOfWork,
     title: 'Tem algum projeto em mente?',

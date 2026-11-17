@@ -6,12 +6,8 @@ import { useMatches } from 'react-router'
  */
 export type HeaderTheme = 'light' | 'brand' | 'dark'
 
-/** Marca do cabeçalho: o logo padrão ou o selo de resgate técnico (página de Serviços). */
-export type HeaderBrand = 'logo' | 'selo'
-
 export interface HeaderHandle {
   headerTheme?: HeaderTheme
-  headerBrand?: HeaderBrand
 }
 
 /** Lê do `handle` da rota mais específica a opção do cabeçalho pedida. */
@@ -27,8 +23,4 @@ function useHeaderHandle<K extends keyof HeaderHandle>(key: K): HeaderHandle[K] 
 export function useHeaderTheme(): HeaderTheme {
   // PROVISÓRIO: teste do cabeçalho branco em todas as páginas fora de Serviços (era 'brand')
   return useHeaderHandle('headerTheme') ?? 'light'
-}
-
-export function useHeaderBrand(): HeaderBrand {
-  return useHeaderHandle('headerBrand') ?? 'logo'
 }

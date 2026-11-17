@@ -2,7 +2,7 @@ import type { SiteInfo } from '../types/content'
 
 // PROVISÓRIO: substituir pelos dados oficiais da empresa.
 export const site: SiteInfo = {
-  // name: 'MaulehSeg',
+  name: 'MaulehSeg',
   tagline: 'Consultoria em segurança do trabalho, treinamentos e serviços.',
   phone: { display: '(11) 95980-0154', href: 'tel:+5511959800154' },
   email: 'mauricio.maulehseg@hotmail.com',

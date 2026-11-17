@@ -3,7 +3,7 @@ import { Link, NavLink as RouterNavLink } from 'react-router'
 import type { NavGroup, NavItem, NavLink } from '../../../types/content'
 import { ButtonLink } from '../../ui/Button/ButtonLink'
 import { ChevronDownIcon, CloseIcon, MenuIcon } from '../../ui/icons'
-import { BrandMark } from '../Header/BrandMark'
+import { Logo } from '../../ui/Logo/Logo'
 import styles from './MobileNav.module.css'
 
 const DESKTOP_QUERY = '(min-width: 64rem)'
@@ -66,7 +66,7 @@ export function MobileNav({ items, cta, className }: MobileNavProps) {
 
       <dialog ref={dialogRef} id={dialogId} className={styles.dialog} aria-label="Menu" onClose={handleClose}>
         <div className={styles.top}>
-          <BrandMark className={styles.logo} sealClassName={styles.seal} surface="light" />
+          <Logo className={styles.logo} />
           <button type="button" className={styles.iconButton} aria-label="Fechar menu" onClick={close}>
             <CloseIcon />
           </button>
