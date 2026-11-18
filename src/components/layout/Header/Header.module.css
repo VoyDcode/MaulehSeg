@@ -41,6 +41,11 @@
   min-height: var(--header-height);
 }
 
+/* Sem logo (Serviços): menu, botão e hambúrguer continuam encostados à direita */
+.inner[data-logo='none'] {
+  justify-content: flex-end;
+}
+
 .brand {
   display: inline-flex;
   flex-shrink: 0;

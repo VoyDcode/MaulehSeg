@@ -7,8 +7,9 @@ import { detailMeta } from '../lib/detail-meta'
 // Mesma paleta preto e laranja da listagem de Serviços
 import styles from './services.module.css'
 
-// Como na listagem de Serviços, o cabeçalho é preto. O selo de resgate técnico fica no banner.
-export const handle: HeaderHandle = { headerTheme: 'dark' }
+// Como na listagem de Serviços: cabeçalho preto e sem logo (pedido do cliente),
+// porque a marca fica no selo grande do banner.
+export const handle: HeaderHandle = { headerTheme: 'dark', headerLogo: false }
 
 export const meta: Route.MetaFunction = ({ params }) => detailMeta(serviceDetailPage, params.slug)
 

@@ -8,8 +8,9 @@ import { servicesPage } from '../content/services-page'
 import { pageMeta } from '../lib/meta'
 import styles from './services.module.css'
 
-// Nesta página o cabeçalho é preto, combinando com o banner.
-export const handle: HeaderHandle = { headerTheme: 'dark' }
+// Nesta página o cabeçalho é preto, combinando com o banner, e sem logo:
+// pedido do cliente, a marca fica no selo grande do banner.
+export const handle: HeaderHandle = { headerTheme: 'dark', headerLogo: false }
 
 export const meta: Route.MetaFunction = () => pageMeta(pages.services)
 

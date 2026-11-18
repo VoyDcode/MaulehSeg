@@ -7,17 +7,20 @@ import { Logo } from '../../ui/Logo/Logo'
 import { MobileNav } from '../MobileNav/MobileNav'
 import { DesktopNav } from './DesktopNav'
 import styles from './Header.module.css'
-import { useHeaderTheme } from './useHeaderTheme'
+import { useHeaderLogo, useHeaderTheme } from './useHeaderTheme'
 
 export function Header() {
   const theme = useHeaderTheme()
+  const showLogo = useHeaderLogo()
 
   return (
     <header className={styles.header} data-theme={theme}>
-      <Container className={styles.inner}>
-        <Link to={paths.home} className={styles.brand}>
-          <Logo className={styles.logo} />
-        </Link>
+      <Container className={styles.inner} data-logo={showLogo ? undefined : 'none'}>
+        {showLogo && (
+          <Link to={paths.home} className={styles.brand}>
+            <Logo className={styles.logo} />
+          </Link>
+        )}
         <DesktopNav items={mainNavigation} className={styles.desktopNav} />
         <div className={styles.cta}>
           <ButtonLink href={contactCta.href}>{contactCta.label}</ButtonLink>

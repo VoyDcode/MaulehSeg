@@ -8,6 +8,8 @@ export type HeaderTheme = 'light' | 'brand' | 'dark'
 
 export interface HeaderHandle {
   headerTheme?: HeaderTheme
+  /** false tira o logo do cabeçalho (Serviços: o selo grande do banner faz esse papel). */
+  headerLogo?: boolean
 }
 
 /** Lê do `handle` da rota mais específica a opção do cabeçalho pedida. */
@@ -23,4 +25,8 @@ function useHeaderHandle<K extends keyof HeaderHandle>(key: K): HeaderHandle[K] 
 export function useHeaderTheme(): HeaderTheme {
   // PROVISÓRIO: teste do cabeçalho branco em todas as páginas fora de Serviços (era 'brand')
   return useHeaderHandle('headerTheme') ?? 'light'
+}
+
+export function useHeaderLogo(): boolean {
+  return useHeaderHandle('headerLogo') ?? true
 }
