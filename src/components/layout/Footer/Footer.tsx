@@ -47,8 +47,6 @@ export function Footer() {
           Site desenvolvido por <CreditList credits={site.credits} />
         </p>
       </Container>
-
-      <div className={styles.watermark} data-text={site.name} aria-hidden="true" />
     </footer>
   )
 }
