@@ -17,7 +17,6 @@ import taymontAndaimes from '../assets/images/clients/taymont-andaimes.webp'
 */
 export const clients: ClientLogo[] = [
   { name: 'Passaro Marrom', logo: { src: passaroMarrom, width: 188, height: 114 } },
-  { name: 'P', logo: { src: swaRealty, width: 188, height: 114 }, onDark: true },
   { name: 'SWA Realty', logo: { src: swaRealty, width: 188, height: 114 }, onDark: true },
   { name: 'Arcos Estruturas Metálicas', logo: { src: arcosEstruturas, width: 368, height: 200 } },
   { name: 'Slitteraço', logo: { src: slitteraco, width: 114, height: 121 } },
