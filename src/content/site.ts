@@ -4,7 +4,7 @@ import type { SiteInfo } from '../types/content'
 export const site: SiteInfo = {
   name: 'MaulehSeg',
   tagline: 'Consultoria em segurança do trabalho, treinamentos e serviços.',
-  phone: { display: '(11) 95980-0154', href: 'tel:+5511959800154' },
+  phone: { display: '(11) 94998-0966', href: 'tel:+5511949980966' },
   email: 'mauricio.maulehseg@hotmail.com',
   address: 'Suzano - SP, Brasil',
   hours: [
