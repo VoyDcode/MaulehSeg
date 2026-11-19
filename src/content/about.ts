@@ -122,7 +122,7 @@ export const aboutContent: AboutContent = {
       {
         // Pedido do cliente: no lugar de "Serviços prestados"
         title: 'Consultoria em SST',
-        description: 'PGR, laudostécnicos e social e assessoria em SST.',
+        description: 'PGR, laudos técnicos e social e assessoria em SST.',
         href: paths.consulting,
       },
       {
