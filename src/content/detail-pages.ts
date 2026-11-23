@@ -1,20 +1,15 @@
 import { paths } from '../paths'
-import type { ContentItem, DetailPageContent, ResponsiveImage } from '../types/content'
+import type { ContentItem, DetailPageContent } from '../types/content'
 import { consulting } from './consulting'
 import { consultingPage } from './consulting-page'
 import { consultingSections } from './details/consulting-sections'
 import { serviceSections } from './details/service-sections'
 import { trainingSections } from './details/training-sections'
-import { homeContent } from './home'
+import { consultingGallery, trainingGallery } from './gallery-photos'
 import { sealImage } from './seal'
 import { services } from './services'
 import { servicesPage } from './services-page'
 import { trainings } from './trainings'
-
-import resgateAvif640 from '../assets/images/about/resgate-ar-livre-640.avif'
-import resgateAvif1024 from '../assets/images/about/resgate-ar-livre-1024.avif'
-import resgateWebp640 from '../assets/images/about/resgate-ar-livre-640.webp'
-import resgateWebp1024 from '../assets/images/about/resgate-ar-livre-1024.webp'
 
 /*
   Conteúdo do template de detalhe (frame "Projetos Template" do Figma).
@@ -29,29 +24,21 @@ const areasOfWork = 'Áreas de atuação: resgate técnico, acesso por cordas, t
 const photosOf = (items: ContentItem[]) =>
   items.flatMap((item) => (item.image && !item.stockImage ? [item.image] : []))
 
-const resgateArLivre: ResponsiveImage = {
-  src: resgateWebp1024,
-  sources: [
-    { type: 'image/avif', srcSet: `${resgateAvif640} 640w, ${resgateAvif1024} 1024w` },
-    { type: 'image/webp', srcSet: `${resgateWebp640} 640w, ${resgateWebp1024} 1024w` },
-  ],
-  sizes: '100vw',
-  width: 1024,
-  height: 768,
-  alt: 'Profissional de capacete, viseira e protetor auricular operando um sistema de cordas durante um resgate ao ar livre',
-}
+/*
+  Galeria dos serviços: pedido do cliente, só fotos de serviços realizados, sem treinamento.
+  A foto do card de Resgate técnico é de um treino de resgate, então fica fora da galeria
+  geral (ela ainda abre a galeria da própria página de Resgate técnico).
+*/
+const servicePhotos = photosOf(services.filter((service) => service.slug !== 'resgate-tecnico-industrial'))
 
-const factoryTraining = homeContent.hero.image ? [homeContent.hero.image] : []
-
-
-// PROVISÓRIO: textos da faixa de contato e galerias montadas com as fotos que já temos.
+// PROVISÓRIO: textos da faixa de contato.
 // O ideal é cada serviço ter as próprias fotos de obra (como no Figma).
 export const serviceDetailPage: DetailPageContent = {
   label: 'Serviços',
   basePath: paths.services,
   items: services,
   sections: serviceSections,
-  gallery: [...photosOf(services), resgateArLivre],
+  gallery: servicePhotos,
   emblem: sealImage,
   contact: {
     eyebrow: areasOfWork,
@@ -67,7 +54,7 @@ export const trainingDetailPage: DetailPageContent = {
   basePath: paths.trainings,
   items: trainings,
   sections: trainingSections,
-  gallery: [...photosOf(trainings), ...factoryTraining],
+  gallery: trainingGallery,
   contact: {
     eyebrow: areasOfWork,
     title: 'Quer este treinamento na sua empresa?',
@@ -83,7 +70,7 @@ export const consultingDetailPage: DetailPageContent = {
   basePath: paths.consulting,
   items: consulting,
   sections: consultingSections,
-  gallery: [...photosOf(consulting), ...factoryTraining],
+  gallery: consultingGallery,
   contact: {
     eyebrow: areasOfWork,
     title: 'Quer apoio na segurança da sua empresa?',

@@ -11,7 +11,10 @@ import nr33Avif1024 from '../assets/images/trainings/nr33-aula-tripe-1024.avif'
 import nr33Webp640 from '../assets/images/trainings/nr33-aula-tripe-640.webp'
 import nr33Webp1024 from '../assets/images/trainings/nr33-aula-tripe-1024.webp'
 
-import nr23 from '../assets/images/trainings/brigada01.jpeg'
+import nr23Avif640 from '../assets/images/trainings/nr23-brigada-incendio-640.avif'
+import nr23Avif1024 from '../assets/images/trainings/nr23-brigada-incendio-1024.avif'
+import nr23Webp640 from '../assets/images/trainings/nr23-brigada-incendio-640.webp'
+import nr23Webp1024 from '../assets/images/trainings/nr23-brigada-incendio-1024.webp'
 
 import resgateAvif640 from '../assets/images/trainings/resgate-tecnico-suspensao-640.avif'
 import resgateAvif1024 from '../assets/images/trainings/resgate-tecnico-suspensao-1024.avif'
@@ -179,11 +182,11 @@ export const trainings: ContentItem[] = [
     code: 'NR-23',
     summary: 'Formação de brigadistas para prevenção e combate a princípios de incêndio, abandono de área e primeiros socorros.',
     image: cardImage(
-      'Turma de brigadistas em sala de aula acompanhando a demonstração de dois instrutores',
-      `${nr23} 640w, ${nr23} 900w`,
-      `${nr23} 640w, ${nr23} 900w`,
-      nr23,
-      900,
+      'Brigadistas com roupa de proteção e equipamento de respiração combatendo um incêndio simulado com jato de água',
+      `${nr23Avif640} 640w, ${nr23Avif1024} 1024w`,
+      `${nr23Webp640} 640w, ${nr23Webp1024} 1024w`,
+      nr23Webp1024,
+      1024,
     ),
   },
   {
