@@ -13,6 +13,19 @@ import detectorAvif868 from '../assets/images/consulting/galeria-teste-detector-
 import detectorWebp640 from '../assets/images/consulting/galeria-teste-detector-gases-640.webp'
 import detectorWebp868 from '../assets/images/consulting/galeria-teste-detector-gases-868.webp'
 
+import fachadaVidroAvif640 from '../assets/images/services/galeria-fachada-vidro-cordas-640.avif'
+import fachadaVidroAvif720 from '../assets/images/services/galeria-fachada-vidro-cordas-720.avif'
+import fachadaVidroWebp640 from '../assets/images/services/galeria-fachada-vidro-cordas-640.webp'
+import fachadaVidroWebp720 from '../assets/images/services/galeria-fachada-vidro-cordas-720.webp'
+import reservatorioAvif640 from '../assets/images/services/galeria-reservatorio-cordas-640.avif'
+import reservatorioAvif720 from '../assets/images/services/galeria-reservatorio-cordas-720.avif'
+import reservatorioWebp640 from '../assets/images/services/galeria-reservatorio-cordas-640.webp'
+import reservatorioWebp720 from '../assets/images/services/galeria-reservatorio-cordas-720.webp'
+import telhaAvif640 from '../assets/images/services/galeria-troca-telha-640.avif'
+import telhaAvif1024 from '../assets/images/services/galeria-troca-telha-1024.avif'
+import telhaWebp640 from '../assets/images/services/galeria-troca-telha-640.webp'
+import telhaWebp1024 from '../assets/images/services/galeria-troca-telha-1024.webp'
+
 import posteAvif640 from '../assets/images/trainings/galeria-simulacao-resgate-poste-640.avif'
 import posteAvif1024 from '../assets/images/trainings/galeria-simulacao-resgate-poste-1024.avif'
 import posteWebp640 from '../assets/images/trainings/galeria-simulacao-resgate-poste-640.webp'
@@ -56,6 +69,31 @@ function galleryPhoto(alt: string, avif: string, webp: string, src: string, widt
     alt,
   }
 }
+
+// Serviços: trabalhos realizados com acesso por cordas (além das fotos dos cards)
+export const serviceGallery: ResponsiveImage[] = [
+  galleryPhoto(
+    'Profissional suspenso por cordas trabalhando junto à fachada de vidro interna de um prédio',
+    `${fachadaVidroAvif640} 640w, ${fachadaVidroAvif720} 720w`,
+    `${fachadaVidroWebp640} 640w, ${fachadaVidroWebp720} 720w`,
+    fachadaVidroWebp720,
+    720,
+  ),
+  galleryPhoto(
+    'Profissional preso por cordas trabalhando na lateral de um reservatório de água alto, ao lado da escada de acesso',
+    `${reservatorioAvif640} 640w, ${reservatorioAvif720} 720w`,
+    `${reservatorioWebp640} 640w, ${reservatorioWebp720} 720w`,
+    reservatorioWebp720,
+    720,
+  ),
+  galleryPhoto(
+    'Profissional de capacete e cinto de segurança, preso a uma linha de vida, trocando uma telha metálica no telhado',
+    `${telhaAvif640} 640w, ${telhaAvif1024} 1024w`,
+    `${telhaWebp640} 640w, ${telhaWebp1024} 1024w`,
+    telhaWebp1024,
+    1024,
+  ),
+]
 
 // Consultoria: inspeção, avaliação e orientação no local de trabalho
 export const consultingGallery: ResponsiveImage[] = [

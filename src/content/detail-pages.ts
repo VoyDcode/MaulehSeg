@@ -5,7 +5,7 @@ import { consultingPage } from './consulting-page'
 import { consultingSections } from './details/consulting-sections'
 import { serviceSections } from './details/service-sections'
 import { trainingSections } from './details/training-sections'
-import { consultingGallery, trainingGallery } from './gallery-photos'
+import { consultingGallery, serviceGallery, trainingGallery } from './gallery-photos'
 import { sealImage } from './seal'
 import { services } from './services'
 import { servicesPage } from './services-page'
@@ -29,7 +29,10 @@ const photosOf = (items: ContentItem[]) =>
   A foto do card de Resgate técnico é de um treino de resgate, então fica fora da galeria
   geral (ela ainda abre a galeria da própria página de Resgate técnico).
 */
-const servicePhotos = photosOf(services.filter((service) => service.slug !== 'resgate-tecnico-industrial'))
+const servicePhotos = [
+  ...photosOf(services.filter((service) => service.slug !== 'resgate-tecnico-industrial')),
+  ...serviceGallery,
+]
 
 // PROVISÓRIO: textos da faixa de contato.
 // O ideal é cada serviço ter as próprias fotos de obra (como no Figma).
